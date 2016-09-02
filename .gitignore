@@ -297,3 +297,17 @@ paket-files/
 __pycache__/
 *.pyc
 
+# OS X only:
+.DS_Store
+*.swp
+*.Trashes
+ 
+# All platforms:
+Library
+Temp
+*.csproj
+*.pidb
+*.unityproj
+*.sln
+*.userprefs
+
