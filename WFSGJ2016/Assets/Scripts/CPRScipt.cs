@@ -7,7 +7,8 @@ public class CPRScipt : MonoBehaviour {
     HealthScript hp;
     MeleePlayerController pContr;
     int count;
-    bool inAgony;
+    public bool inAgony;
+
 	// Use this for initialization
 	void Start () {
 	    resCounter = GetComponentInChildren<Text>();

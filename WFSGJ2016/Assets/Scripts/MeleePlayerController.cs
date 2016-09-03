@@ -70,7 +70,7 @@ public class MeleePlayerController : MonoBehaviour {
 
     void Attack()
     {
-        if (Input.GetButton("Player1Attack"))
+        if (Input.GetButton("Player1Attack") && !GetComponent<CPRScipt>().inAgony )
         {
             if (faceing == Faceing.Up)
                 attackCollider.transform.position = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
