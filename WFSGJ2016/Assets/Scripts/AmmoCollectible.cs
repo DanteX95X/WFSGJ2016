@@ -1,23 +1,32 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
+using System;
 
-public class AmmoCollectible : Collectible {
+public class AmmoCollectible : Collectible
+{
 
-	int ammoCount = 15;
+	int ammoReplenishment = 15;
 
-	// Use this for initialization
-	void Start () {
-	
+    public Text guiCounter = null;
+
+    Text ammoCounter;
+
+	void Start ()
+    {
+        ammoCounter = GameObject.FindObjectOfType<Text>();
 	}
 	
-	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
 	
 	}
 
 	public override void Collect()
 	{
-		GameController.Instance.ammo += ammoCount;
+        //GameController.Instance.ammo += ammoReplenishment;
+        GameObject.FindObjectOfType<RangedPlayer>().ReplenishAmmo(ammoReplenishment);
+        ammoCounter.text = (Int32.Parse(ammoCounter.text) + ammoReplenishment).ToString();
 		base.Collect();
 	}
 }
