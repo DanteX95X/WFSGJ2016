@@ -24,6 +24,7 @@ public class AmmoCollectible : Collectible
 
 	public override void Collect()
 	{
+        Debug.Log("Collected");
         //GameController.Instance.ammo += ammoReplenishment;
         GameObject.FindObjectOfType<MeleePlayerController>().AddTemporaryAmmo(ammoReplenishment);
        // ammoCounter.text = (Int32.Parse(ammoCounter.text) + ammoReplenishment).ToString();
@@ -32,4 +33,26 @@ public class AmmoCollectible : Collectible
 
 		base.Collect();
 	}
+
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.gameObject.name == "RangedPlayer")
+        {
+            Debug.Log("Picked Up");
+            collider.gameObject.GetComponent<RangedPlayer>().ReplenishAmmo(ammoReplenishment);
+            ammoCounter.text = (Int32.Parse(ammoCounter.text) + ammoReplenishment).ToString();
+            Destroy(gameObject);
+        }
+    }
+
+    void OnTriggerExit2D(Collider2D collider)
+    {
+        if (collider.gameObject.name == "RangedPlayer")
+        {
+            Debug.Log("Picked Up");
+            collider.gameObject.GetComponent<RangedPlayer>().ReplenishAmmo(ammoReplenishment);
+            ammoCounter.text = (Int32.Parse(ammoCounter.text) + ammoReplenishment).ToString();
+            Destroy(gameObject);
+        }
+    }
 }
