@@ -16,6 +16,11 @@ public class RangedPlayer : MonoBehaviour, IMortal
 
     [SerializeField]
     GameObject healingBullet = null;
+	
+    // public GameObject muzzleFlash;
+    // public GameObject muzzle;
+    private Transform muzzle;
+	private ParticleSystem muzzleFlash;
 
     bool hasHealingShot = false;
 
@@ -30,11 +35,14 @@ public class RangedPlayer : MonoBehaviour, IMortal
         rb = GetComponent<Rigidbody2D>();
         ammoCounter.text = ammunitionRounds.ToString();
         asource = GetComponent<AudioSource>();
+		
+		muzzle = gameObject.transform.Find("GunMuzzle");
+		muzzleFlash = muzzle.GetComponent<ParticleSystem>();
     }
 
     void Update ()
     {
-        if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetButtonUp("Player2Attack"))
         {
             if (ammunitionRounds > 0)
             {
@@ -44,7 +52,13 @@ public class RangedPlayer : MonoBehaviour, IMortal
                     hasHealingShot = false;
                 }
                 else
+				{
                     (Instantiate(bullet, transform.position, transform.rotation) as GameObject).GetComponent<Bullet>().ParentCharacter = gameObject;
+					// muzzle flash
+                    // Instantiate(muzzleFlash, muzzle.position, muzzle.rotation);
+					muzzleFlash.Play();
+					muzzleFlash.Emit(25);	//count
+				}
                 --ammunitionRounds;
                 ammoCounter.text = (Int32.Parse(ammoCounter.text) - 1).ToString();
                 asource.PlayOneShot(asource.clip);
@@ -52,22 +66,32 @@ public class RangedPlayer : MonoBehaviour, IMortal
         }
         float moveValue = 0.0f;
 
-	    if(Input.GetKey(KeyCode.LeftArrow))
+	    /*if(Input.GetKey(KeyCode.LeftArrow))
         {
             transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
         }
         if(Input.GetKey(KeyCode.RightArrow))
         {
             transform.Rotate(0, 0, -rotationSpeed * Time.deltaTime);
+        }*/
+        if(Input.GetButton("Player2Rotate"))
+        {
+            transform.Rotate(0, 0, Input.GetAxis("Player2Rotate") * rotationSpeed * Time.deltaTime);
         }
-        if(Input.GetKey(KeyCode.UpArrow))
+        if(Input.GetButton("Player2Move"))
+        {
+            moveValue = Input.GetAxis("Player2Move") * movementSpeed;
+        }
+
+
+        /*if(Input.GetKey(KeyCode.UpArrow))
         {
             moveValue = movementSpeed;
         }
         if(Input.GetKey(KeyCode.DownArrow))
         {
             moveValue = -movementSpeed;
-        }
+        }*/
         rb.velocity = transform.up * moveValue * Time.deltaTime;
     }
 
