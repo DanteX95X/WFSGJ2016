@@ -20,7 +20,7 @@ namespace Assets.Scripts.Enemy
 
         void Start()
         {
-            Debug.Log("enemy spawned");
+            Debug.Log("Enemy spawned!");
 
             diffPosition = destinationPosition - transform.position;
             diffPosition.Normalize();
@@ -33,9 +33,13 @@ namespace Assets.Scripts.Enemy
         void Update()
         {
             deltaMove = Time.deltaTime*1;
-            if (Mathf.Abs(transform.position.x) > 0.1f && Mathf.Abs(transform.position.y) > 0.1f)
+            if (Mathf.Abs(transform.position.x) > 0.1f || Mathf.Abs(transform.position.y) > 0.1f)
             {
                 transform.position += diffPosition * deltaMove;
+            }
+            else
+            {
+                Destroy(gameObject);
             }
 
             time += Time.deltaTime;
