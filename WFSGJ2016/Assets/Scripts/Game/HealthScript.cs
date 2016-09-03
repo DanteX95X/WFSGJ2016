@@ -7,7 +7,7 @@ public class HealthScript : MonoBehaviour
     public int health = 100;
     public Slider healthBar;
     public AudioClip deathClip;
-    AudioSource audio;
+    AudioSource audioSource;
 
     // Use this for initialization
     void Start()
@@ -17,7 +17,7 @@ public class HealthScript : MonoBehaviour
             healthBar.value = health;
             healthBar.maxValue = health;
         }
-        audio = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
 
     }
 
@@ -49,8 +49,8 @@ public class HealthScript : MonoBehaviour
     IEnumerator CDie()
     {
         //Odpal animacje, odegraj dźwięk i odpal particle???
-        if (audio != null && deathClip != null)
-            audio.PlayOneShot(deathClip, 1f);
+        if (audioSource != null && deathClip != null)
+            audioSource.PlayOneShot(deathClip, 1f);
         yield return new WaitForSeconds(0.5f);
 
         Destroy(gameObject);

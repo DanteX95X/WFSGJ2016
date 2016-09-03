@@ -1,22 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class HealthCollectible : Collectible {
-
-	int healthValue = 20;
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
-
+public class HealthCollectible : Collectible
+{
 	public override void Collect()
 	{
-		GameController.Instance.rangedPlayer.GetComponent<HealthScript>().AddHealth(healthValue);
+        FindObjectOfType<RangedPlayer>().PickUpHealthCollectible();
 		base.Collect();
 	}
+
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.gameObject.name == "RangedPlayer")
+            Collect();
+    }
 }

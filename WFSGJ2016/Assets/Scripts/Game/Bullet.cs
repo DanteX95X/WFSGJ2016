@@ -10,13 +10,13 @@ public class Bullet : MonoBehaviour
 
     float counter = 0;
 
-	void Update ()
+	protected void Update ()
     {
         transform.position += transform.up * movementSpeed * Time.deltaTime;
         DestroyBullet();
 	}
 
-    void DestroyBullet()
+    protected void DestroyBullet()
     {
         counter += Time.deltaTime;
         if (counter > 2)

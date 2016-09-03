@@ -5,7 +5,6 @@ public class MeleePlayerController : MonoBehaviour {
 
     public float movementSpeed = 100.0f;
     public GameObject attackColliderGO;
-    float health = 100.0f;
 
     CircleCollider2D attackCollider;
     Faceing faceing;
