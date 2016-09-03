@@ -31,6 +31,7 @@ GameObject:
   - 4: {fileID: 490682}
   - 58: {fileID: 5886014}
   - 82: {fileID: 82000010887803854}
+  - 114: {fileID: 114000014062208302}
   m_Layer: 0
   m_Name: attackCollider
   m_TagString: Untagged
@@ -103,7 +104,7 @@ CircleCollider2D:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 199376}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -512,6 +513,18 @@ MonoBehaviour:
   m_FillAmount: 1
   m_FillClockwise: 1
   m_FillOrigin: 0
+--- !u!114 &114000014062208302
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 199376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 147241be6e64e4647ba20e5a31b233e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 20
 --- !u!222 &222000011879605286
 CanvasRenderer:
   m_ObjectHideFlags: 1

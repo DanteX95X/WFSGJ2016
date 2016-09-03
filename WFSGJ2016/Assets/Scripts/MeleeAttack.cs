@@ -22,7 +22,8 @@ public class MeleeAttack : MonoBehaviour {
         if (collider.tag == "Enemy")
         {
             collider.GetComponent<HealthScript>().TakeDamage(damage);
-            asource.PlayOneShot(asource.clip);
+            if(asource != null)
+                asource.PlayOneShot(asource.clip);
         }
     }
 }
