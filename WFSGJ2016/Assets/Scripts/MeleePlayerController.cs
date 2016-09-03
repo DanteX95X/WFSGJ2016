@@ -57,11 +57,55 @@ public class MeleePlayerController : MonoBehaviour {
                 faceing = Faceing.Up;
         }
 
-		if (newYpos < 0.0f)
-			animator.SetBool("walkDown", true);
-		else
-			animator.SetBool("walkDown", false);
+//		if (newYpos < 0.0f)
+//			animator.SetBool("walkDown", true);
+//		else if (newYpos > 0.0f)
+//			animator.SetBool("walkUp", true);
+//		else 
+//		{
+//			animator.SetBool("walkDown", false);
+//			animator.SetBool("walkUp", false);
+//		}
+//
+//		if (newXpos < 0.0f)
+//			animator.SetBool("walkLeft", true);
+//		else if (newXpos > 0.0f)
+//			animator.SetBool("walkRight", true);
+//		else 
+//		{
+//			animator.SetBool("walkRight", false);
+//			animator.SetBool("walkLeft", false);
+//		}
 
+		if (faceing == Faceing.Up && newYpos > 0.0f) {
+			animator.SetBool("walkUp", true);
+			animator.SetBool("walkDown", false);
+			animator.SetBool("walkRight", false);
+			animator.SetBool("walkLeft", false);
+		} else if (faceing == Faceing.Down && newYpos < 0.0f) {
+			animator.SetBool("walkDown", true);
+			animator.SetBool("walkUp", false);
+			animator.SetBool("walkRight", false);
+			animator.SetBool("walkLeft", false);
+		} else if (faceing == Faceing.Left && newXpos < 0.0f) {
+			animator.SetBool("walkLeft", true);
+			animator.SetBool("walkDown", false);
+			animator.SetBool("walkUp", false);
+			animator.SetBool("walkRight", false);
+		} else if (faceing == Faceing.Right && newXpos > 0.0f) {
+			animator.SetBool("walkRight", true);
+			animator.SetBool("walkDown", false);
+			animator.SetBool("walkUp", false);
+			animator.SetBool("walkLeft", false);
+		}	
+		else 
+		{
+			animator.SetBool("walkDown", false);
+			animator.SetBool("walkUp", false);
+			animator.SetBool("walkRight", false);
+			animator.SetBool("walkLeft", false);
+		}
+			
 		rb.velocity = new Vector2(newXpos, newYpos);
 	}
 
