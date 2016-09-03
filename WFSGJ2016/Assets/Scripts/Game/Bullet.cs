@@ -33,7 +33,7 @@ public class Bullet : MonoBehaviour
             Debug.Log("Character has been shot");
         }
 
-        if (collider.gameObject != ParentCharacter && collider.gameObject.tag != "Collectible")
+        if (collider.gameObject != ParentCharacter && collider.gameObject.tag != "Collectible" && collider.gameObject.tag != "AmmoCheckPoint")
             Destroy(gameObject);
     }
 }
