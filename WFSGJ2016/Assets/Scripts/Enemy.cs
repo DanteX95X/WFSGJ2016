@@ -47,7 +47,7 @@ namespace Assets.Scripts.Enemy
             if (time >= spawnTime)
             {
 
-                SpawnBullet();
+//                SpawnBullet();
                 SetSpawnTime();
             }
         }

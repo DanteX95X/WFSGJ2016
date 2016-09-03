@@ -35,6 +35,13 @@ public class HealthScript : MonoBehaviour
             Die();
     }
 
+	public void AddHealth(int healthValue)
+	{
+		health += healthValue;
+		if (health > 100)
+			health = 100;
+	}
+
     public void Die()
     {
         StartCoroutine("CDie");
