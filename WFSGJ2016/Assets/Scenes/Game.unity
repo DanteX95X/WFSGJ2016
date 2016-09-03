@@ -578,12 +578,12 @@ Prefab:
     - target: {fileID: 224000011807472700, guid: adf4808677e764794bf371f91bb37b20,
         type: 2}
       propertyPath: m_AnchorMax.x
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224000011807472700, guid: adf4808677e764794bf371f91bb37b20,
         type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: adf4808677e764794bf371f91bb37b20, type: 2}
@@ -746,6 +746,16 @@ Prefab:
       propertyPath: ammoCounter
       value: 
       objectReference: {fileID: 1184468234}
+    - target: {fileID: 224000010817070904, guid: 505ba6363b313466b984dae518b4aa42,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000010817070904, guid: 505ba6363b313466b984dae518b4aa42,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 505ba6363b313466b984dae518b4aa42, type: 2}
   m_IsPrefabParent: 0
