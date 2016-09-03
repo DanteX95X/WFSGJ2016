@@ -20,9 +20,10 @@ GameObject:
   m_Component:
   - 4: {fileID: 4000011182606498}
   - 33: {fileID: 33000012889813792}
-  - 65: {fileID: 65000012543825390}
   - 23: {fileID: 23000011003393398}
   - 114: {fileID: 114000010695267312}
+  - 61: {fileID: 61000012969894382}
+  - 50: {fileID: 50000011688084928}
   m_Layer: 0
   m_Name: RangedPlayer
   m_TagString: Player
@@ -147,18 +148,37 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010279666214}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!65 &65000012543825390
-BoxCollider:
+--- !u!50 &50000011688084928
+Rigidbody2D:
+  serializedVersion: 2
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000010279666214}
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &61000012969894382
+BoxCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010279666214}
+  m_Enabled: 1
+  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1}
 --- !u!65 &65000014183696222
 BoxCollider:
   m_ObjectHideFlags: 1
