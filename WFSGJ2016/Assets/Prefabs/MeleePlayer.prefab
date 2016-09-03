@@ -14,7 +14,7 @@ GameObject:
   - 114: {fileID: 114000011427815938}
   - 114: {fileID: 114000010626391232}
   - 114: {fileID: 114000011649987878}
-  - 95: {fileID: 95000014007799380}
+  - 95: {fileID: 95000011154187118}
   m_Layer: 0
   m_Name: MeleePlayer
   m_TagString: Player
@@ -351,7 +351,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
---- !u!95 &95000014007799380
+--- !u!95 &95000011154187118
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 1
@@ -460,7 +460,7 @@ MonoBehaviour:
     m_HighlightedTrigger: Highlighted
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 224000011807472700}
   m_HandleRect: {fileID: 0}
@@ -520,6 +520,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 300
   attackColliderGO: {fileID: 199376}
+  temporaryAmmo: 0
 --- !u!114 &114000011649987878
 MonoBehaviour:
   m_ObjectHideFlags: 1
