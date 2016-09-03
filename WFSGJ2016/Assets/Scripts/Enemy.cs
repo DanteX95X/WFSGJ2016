@@ -8,12 +8,13 @@ namespace Assets.Scripts.Enemy
     public class Enemy : MonoBehaviour
     {
         float deltaMove = 0f;
+
         float minTime = 1f;
         float maxTime = 3f;
         float spawnTime = 0f;
         float time = 0f;
 
-        public GameObject bullet;
+        public GameObject bullet = null;
 
         Vector3 diffPosition = new Vector3(0, 0, 0);
         Vector3 destinationPosition = new Vector3(0, 0, 0);
@@ -47,15 +48,16 @@ namespace Assets.Scripts.Enemy
             if (time >= spawnTime)
             {
 
-//                SpawnBullet();
+                SpawnBullet();
                 SetSpawnTime();
             }
         }
 
         void SpawnBullet()
         {
+            Debug.Log("spawning bullet");
             time = minTime;
-            Instantiate(bullet, transform.position, transform.rotation);
+            (Instantiate(bullet, transform.position, transform.rotation) as GameObject).GetComponent<Bullet>().ParentCharacter = gameObject;
         }
 
         void SetSpawnTime()
