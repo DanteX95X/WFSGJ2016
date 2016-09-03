@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class MeleePlayerController : MonoBehaviour {
 
@@ -12,6 +13,7 @@ public class MeleePlayerController : MonoBehaviour {
     Faceing faceing;
 	Rigidbody2D rb;
 	Animator animator;
+    Text ammoText;
 
     float attackDelay = 0.5f;
 
@@ -31,6 +33,8 @@ public class MeleePlayerController : MonoBehaviour {
 		animator = GetComponent<Animator>();
 		rb = GetComponent<Rigidbody2D>();
         temporaryAmmo = 0;
+        ammoText = GetComponentsInChildren<Text>()[1];
+        ammoText.text = "";
 	}
 	
 	// Update is called once per frame
@@ -161,5 +165,13 @@ public class MeleePlayerController : MonoBehaviour {
     public void AddTemporaryAmmo(int value)
     {
         temporaryAmmo += value;
+        SetGUIAmmo();
+    }
+    public void SetGUIAmmo()
+    {
+        if (temporaryAmmo != 0)
+            ammoText.text = temporaryAmmo.ToString();
+        else
+            ammoText.text = "";
     }
 }
