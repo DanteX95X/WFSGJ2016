@@ -5,7 +5,6 @@ public class MeleePlayerController : MonoBehaviour {
 
     public float movementSpeed = 100.0f;
     public GameObject attackColliderGO;
-    float health = 100.0f;
 
     CircleCollider2D attackCollider;
     Faceing faceing;
@@ -90,13 +89,4 @@ public class MeleePlayerController : MonoBehaviour {
 			collider.gameObject.GetComponent<Collectible>().Collect();
 		}
 	}
-
-	void  OnCollisionEnter2D(Collision2D collision)
-	{
-		if (collision.gameObject.tag == "Collectible") 
-		{
-			collision.gameObject.GetComponent<Collectible>().Collect();
-		}
-	}
-
 }

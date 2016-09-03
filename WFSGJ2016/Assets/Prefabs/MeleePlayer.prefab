@@ -12,6 +12,7 @@ GameObject:
   - 114: {fileID: 11430194}
   - 50: {fileID: 5012234}
   - 58: {fileID: 5861832}
+  - 114: {fileID: 11466652}
   m_Layer: 0
   m_Name: MeleePlayer
   m_TagString: Player
@@ -28,6 +29,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 490682}
   - 58: {fileID: 5886014}
+  - 114: {fileID: 11425630}
   m_Layer: 0
   m_Name: attackCollider
   m_TagString: Untagged
@@ -105,6 +107,18 @@ CircleCollider2D:
   m_Offset: {x: 0.01, y: 0}
   serializedVersion: 2
   m_Radius: 0.355
+--- !u!114 &11425630
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 199376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 147241be6e64e4647ba20e5a31b233e4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 20
 --- !u!114 &11430194
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -118,6 +132,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 100
   attackColliderGO: {fileID: 199376}
+--- !u!114 &11466652
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 115406}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0bb4db5c56549d4692bfdbe97a05b68, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 100
+  healthBar: {fileID: 0}
+  deathClip: {fileID: 0}
 --- !u!212 &21239862
 SpriteRenderer:
   m_ObjectHideFlags: 1
