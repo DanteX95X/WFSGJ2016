@@ -9,10 +9,6 @@ public class Bullet : MonoBehaviour
     public GameObject ParentCharacter { get; set; }
 
     float counter = 0;
-    void Start()
-    {
-        Debug.Log("Ranged player spawned");
-    }
 
 	void Update ()
     {
