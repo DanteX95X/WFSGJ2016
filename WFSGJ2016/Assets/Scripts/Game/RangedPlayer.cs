@@ -1,5 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
+using System;
 
 public class RangedPlayer : MonoBehaviour, IMortal
 {
@@ -17,24 +19,34 @@ public class RangedPlayer : MonoBehaviour, IMortal
 
     bool hasHealingShot = false;
 
+    int ammunitionRounds = 20;
+
     Rigidbody2D rb;
+    Text ammoCounter;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        ammoCounter = FindObjectOfType<Text>();
+        ammoCounter.text = ammunitionRounds.ToString();
     }
 
     void Update ()
     {
         if (Input.GetKeyUp(KeyCode.Space))
         {
-            if (hasHealingShot)
+            if (ammunitionRounds > 0)
             {
-                (Instantiate(healingBullet, transform.position, transform.rotation) as GameObject).GetComponent<HealingBullet>().ParentCharacter = gameObject;
-                hasHealingShot = false;
+                if (hasHealingShot)
+                {
+                    (Instantiate(healingBullet, transform.position, transform.rotation) as GameObject).GetComponent<HealingBullet>().ParentCharacter = gameObject;
+                    hasHealingShot = false;
+                }
+                else
+                    (Instantiate(bullet, transform.position, transform.rotation) as GameObject).GetComponent<Bullet>().ParentCharacter = gameObject;
+                --ammunitionRounds;
+                ammoCounter.text = (Int32.Parse(ammoCounter.text) - 1).ToString();
             }
-            else
-                (Instantiate(bullet, transform.position, transform.rotation) as GameObject).GetComponent<Bullet>().ParentCharacter = gameObject;
         }
         float moveValue = 0.0f;
 
@@ -65,5 +77,10 @@ public class RangedPlayer : MonoBehaviour, IMortal
     public void PickUpHealthCollectible()
     {
         hasHealingShot = true;
+    }
+
+    public void ReplenishAmmo(int ammoReplenishment)
+    {
+        ammunitionRounds += ammoReplenishment;
     }
 }
