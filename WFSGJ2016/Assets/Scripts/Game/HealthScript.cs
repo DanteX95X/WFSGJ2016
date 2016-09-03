@@ -14,8 +14,8 @@ public class HealthScript : MonoBehaviour
     {
         if (healthBar != null)
         {
-            healthBar.value = health;
             healthBar.maxValue = health;
+            healthBar.value = health;
         }
         audioSource = GetComponent<AudioSource>();
 
