@@ -8,6 +8,7 @@ public class HealthScript : MonoBehaviour
     public bool deathWhenNoHealth = true;
     public Slider healthBar;
     public AudioClip deathClip;
+    public ParticleSystem particle;
     AudioSource audioSource;
 
     // Use this for initialization
@@ -32,6 +33,9 @@ public class HealthScript : MonoBehaviour
         health -= dmg;
         if (healthBar != null)
             healthBar.value = health;
+        if (dmg > 0 && particle != null && !particle.isPlaying)
+            particle.Play();
+
         if (health <= 0 && deathWhenNoHealth)
             Die();
     }
