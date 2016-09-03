@@ -35,7 +35,7 @@ namespace Assets.Scripts.Enemy
        // [SerializeField]
         Vector3 destinationPosition = new Vector3(0, 0, 0);
 
-        Transform meleePlayer;
+        MeleePlayerController meleePlayer;
 
         void Start()
         {
@@ -50,7 +50,7 @@ namespace Assets.Scripts.Enemy
             SetSpawnTime();
             time = 0;
 
-            meleePlayer = FindObjectOfType<MeleePlayerController>().transform;
+            meleePlayer = FindObjectOfType<MeleePlayerController>();
         }
 
         void Update()
@@ -86,7 +86,8 @@ namespace Assets.Scripts.Enemy
         {
             Debug.Log("spawning bullet");
             time = minTime;
-            (Instantiate(bullet, transform.position, Quaternion.LookRotation(new Vector3(0,0,1), meleePlayer.position - transform.position)) as GameObject).GetComponent<Bullet>().ParentCharacter = gameObject;
+            if (transform != null && meleePlayer != null)
+                (Instantiate(bullet, transform.position, Quaternion.LookRotation(new Vector3(0,0,1), meleePlayer.transform.position - transform.position)) as GameObject).GetComponent<Bullet>().ParentCharacter = gameObject;
         }
 
         public void SetDestination(Vector3 destination)
