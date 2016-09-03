@@ -31,6 +31,8 @@ namespace Assets.Scripts.Enemy
         bool dead;
 
         Vector3 diffPosition = new Vector3(0, 0, 0);
+
+       // [SerializeField]
         Vector3 destinationPosition = new Vector3(0, 0, 0);
 
         void Start()
@@ -81,6 +83,11 @@ namespace Assets.Scripts.Enemy
             Debug.Log("spawning bullet");
             time = minTime;
             (Instantiate(bullet, transform.position, transform.rotation) as GameObject).GetComponent<Bullet>().ParentCharacter = gameObject;
+        }
+
+        public void SetDestination(Vector3 destination)
+        {
+            destinationPosition = destination;
         }
 
         void SetSpawnTime()

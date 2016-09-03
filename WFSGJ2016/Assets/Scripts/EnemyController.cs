@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using Assets.Scripts.Enemy;
 
 public class EnemyController : MonoBehaviour {
 
@@ -12,11 +13,16 @@ public class EnemyController : MonoBehaviour {
     float spawnTime = 0f;
     float time = 0f;
 
+    public GameObject[] houses = null;
+
     public GameObject enemy;
 
-    void Start ()
+    void Start()
     {
         Debug.Log("Enemy controller started!");
+
+        houses = GameObject.FindGameObjectsWithTag("House");
+
         SetSpawnTime();
         time = minTime;
     }
@@ -37,7 +43,7 @@ public class EnemyController : MonoBehaviour {
     void SpawnEnemy()
     {
         time = minTime;
-        Instantiate(enemy, RandomPosition(), new Quaternion(0, 0, 0, 0));
+        (Instantiate(enemy, RandomPosition(), new Quaternion(0, 0, 0, 0)) as GameObject).GetComponent<Enemy>().SetDestination(RandomDestination());
     }
 
     void SetSpawnTime()
@@ -66,5 +72,10 @@ public class EnemyController : MonoBehaviour {
             return new Vector3(12 * (Random.value - 0.5f), -4, 0);
         }
 
+    }
+
+    Vector3 RandomDestination()
+    {
+        return houses[Random.Range(0,houses.Length-1)].transform.position;
     }
 }
