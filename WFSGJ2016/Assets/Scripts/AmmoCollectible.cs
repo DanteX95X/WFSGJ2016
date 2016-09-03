@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Collectible : MonoBehaviour {
+public class AmmoCollectible : Collectible {
+
+	int ammoCount = 15;
 
 	// Use this for initialization
 	void Start () {
@@ -13,8 +15,9 @@ public class Collectible : MonoBehaviour {
 	
 	}
 
-	public virtual void Collect()
+	public override void Collect()
 	{
-		Destroy(gameObject);
+		GameController.Instance.ammo += ammoCount;
+		base.Collect();
 	}
 }
