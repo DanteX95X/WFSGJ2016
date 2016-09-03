@@ -93,6 +93,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2224627ee7ce74a07b7b92e34b2c375c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  guiCounter: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

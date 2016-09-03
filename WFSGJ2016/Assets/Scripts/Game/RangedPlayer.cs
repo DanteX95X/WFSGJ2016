@@ -67,7 +67,7 @@ public class RangedPlayer : MonoBehaviour, IMortal
             moveValue = -movementSpeed;
         }
         rb.velocity = transform.up * moveValue * Time.deltaTime;
-	}
+    }
 
     public void Die()
     {

@@ -245,24 +245,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
---- !u!1 &568362665 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 119900, guid: 505ba6363b313466b984dae518b4aa42, type: 2}
-  m_PrefabInternal: {fileID: 1019195467}
---- !u!58 &568362668
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 568362665}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.5
 --- !u!1001 &981769420
 Prefab:
   m_ObjectHideFlags: 0
@@ -423,25 +405,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 11439194, guid: 505ba6363b313466b984dae518b4aa42, type: 2}
-      propertyPath: movementSpeed
-      value: 100
-      objectReference: {fileID: 0}
-    - target: {fileID: 11439194, guid: 505ba6363b313466b984dae518b4aa42, type: 2}
-      propertyPath: rotationSpeed
-      value: 130
-      objectReference: {fileID: 0}
-    - target: {fileID: 6563132, guid: 505ba6363b313466b984dae518b4aa42, type: 2}
-      propertyPath: m_IsTrigger
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5073060, guid: 505ba6363b313466b984dae518b4aa42, type: 2}
-      propertyPath: m_Constraints
-      value: 4
-      objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 6563132, guid: 505ba6363b313466b984dae518b4aa42, type: 2}
-    - {fileID: 6177630, guid: 505ba6363b313466b984dae518b4aa42, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 505ba6363b313466b984dae518b4aa42, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1133813745
