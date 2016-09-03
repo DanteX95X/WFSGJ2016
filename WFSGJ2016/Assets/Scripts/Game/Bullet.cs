@@ -5,6 +5,7 @@ public class Bullet : MonoBehaviour
 {
     [SerializeField]
     float movementSpeed = 15;
+    public int damage = 1;
 
     public GameObject ParentCharacter { get; set; }
 
@@ -28,6 +29,7 @@ public class Bullet : MonoBehaviour
         if (collider.gameObject != ParentCharacter && (collider.gameObject.tag == "Player" || collider.gameObject.tag == "Enemy"))
         {
             //collider.gameObject.GetComponent<IMortal>().Die();
+            collider.gameObject.GetComponent<HealthScript>().TakeDamage(damage);
             Debug.Log("Character has been shot");
         }
 
