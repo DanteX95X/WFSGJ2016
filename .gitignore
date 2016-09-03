@@ -2,6 +2,9 @@
 # Created by https://www.gitignore.io/api/unity,visualstudio
 
 ### Unity ###
+
+/ProjectSettings/ProjectVersion.txt
+
 /[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/
