@@ -45,7 +45,6 @@ namespace Assets.Scripts.Enemy
         void Start()
         {
             asource = GetComponent<AudioSource>();
-            Debug.Log("Enemy spawned!");
 
             healthScript = GetComponent<HealthScript>();
 
@@ -81,7 +80,6 @@ namespace Assets.Scripts.Enemy
                 if (meleePlayer != null && (Quaternion.LookRotation(new Vector3(0, 0, 1), meleePlayer.transform.position - transform.position).eulerAngles - transform.rotation.eulerAngles).magnitude > 5)
                 {
                     isMoving = false;
-                    Debug.Log("Rotation");
                     Rotate(Quaternion.LookRotation(new Vector3(0, 0, 1), meleePlayer.transform.position - transform.position));
                 }
                 else

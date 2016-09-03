@@ -15,6 +15,8 @@ public class MeleePlayerController : MonoBehaviour {
 
     float attackDelay = 0.5f;
 
+    public AmmoCollectible child = null;
+
     enum Faceing
     {
         Up,
@@ -138,19 +140,19 @@ public class MeleePlayerController : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D collider)
 	{
-		if (collider.gameObject.tag == "Collectible") 
+		if (collider.gameObject.tag == "Collectible" && child == null) 
 		{
 			collider.gameObject.GetComponent<Collectible>().Collect();
 		}
 	}
 
-	void  OnCollisionEnter2D(Collision2D collision)
+	/*void  OnCollisionEnter2D(Collision2D collision)
 	{
 		if (collision.gameObject.tag == "Collectible") 
 		{
 			collision.gameObject.GetComponent<Collectible>().Collect();
 		}
-	}
+	}*/
 
     public void AddTemporaryAmmo(int value)
     {
