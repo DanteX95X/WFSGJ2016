@@ -13,8 +13,17 @@ namespace Assets.Scripts.Enemy
         float maxTime = 3f;
         float spawnTime = 0f;
         float time = 0f;
+        public int houseDamage = 10;
+
+        HealthScript healthScript;
 
         public GameObject bullet = null;
+
+        public GameObject[] collectibles;
+
+        public float dropProbability;
+
+        bool dead;
 
         Vector3 diffPosition = new Vector3(0, 0, 0);
         Vector3 destinationPosition = new Vector3(0, 0, 0);
@@ -22,6 +31,8 @@ namespace Assets.Scripts.Enemy
         void Start()
         {
             Debug.Log("Enemy spawned!");
+
+            healthScript = GetComponent<HealthScript>();
 
             diffPosition = destinationPosition - transform.position;
             diffPosition.Normalize();
@@ -51,6 +62,13 @@ namespace Assets.Scripts.Enemy
                 SpawnBullet();
                 SetSpawnTime();
             }
+
+            if (healthScript.health <= 0.0f && !dead)
+            {
+                dead = true;
+                DropCollectible();
+                healthScript.Die();
+            }
         }
 
         void SpawnBullet()
@@ -63,6 +81,29 @@ namespace Assets.Scripts.Enemy
         void SetSpawnTime()
         {
             spawnTime = Random.Range(minTime, maxTime);
+        }
+
+        void OnCollisionEnter2D(Collision2D collision)
+        {
+            if (collision.gameObject.tag == "House")
+            {
+                collision.collider.gameObject.GetComponentInParent<HealthScript>().TakeDamage(houseDamage);
+                Destroy(this.gameObject);
+            }
+        }
+
+        void DropCollectible()
+        {
+            if (Random.Range(0.0f, 1.0f) < dropProbability)
+            {
+                if (collectibles.Length > 0)
+                {
+                    int randomindex = Random.Range(0, collectibles.Length - 1);
+                    Instantiate(collectibles[randomindex], transform.position, transform.rotation);
+                }
+            }
+
+
         }
     }
 }

@@ -89,4 +89,13 @@ public class MeleePlayerController : MonoBehaviour {
 			collider.gameObject.GetComponent<Collectible>().Collect();
 		}
 	}
+
+	void  OnCollisionEnter2D(Collision2D collision)
+	{
+		if (collision.gameObject.tag == "Collectible") 
+		{
+			collision.gameObject.GetComponent<Collectible>().Collect();
+		}
+	}
+
 }

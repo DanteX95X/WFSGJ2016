@@ -5,18 +5,19 @@ public class Bullet : MonoBehaviour
 {
     [SerializeField]
     float movementSpeed = 15;
+    public int damage = 1;
 
     public GameObject ParentCharacter { get; set; }
 
     float counter = 0;
 
-	void Update ()
+	protected void Update ()
     {
         transform.position += transform.up * movementSpeed * Time.deltaTime;
         DestroyBullet();
 	}
 
-    void DestroyBullet()
+    protected void DestroyBullet()
     {
         counter += Time.deltaTime;
         if (counter > 2)
@@ -28,6 +29,7 @@ public class Bullet : MonoBehaviour
         if (collider.gameObject != ParentCharacter && (collider.gameObject.tag == "Player" || collider.gameObject.tag == "Enemy"))
         {
             //collider.gameObject.GetComponent<IMortal>().Die();
+            collider.gameObject.GetComponent<HealthScript>().TakeDamage(damage);
             Debug.Log("Character has been shot");
         }
 

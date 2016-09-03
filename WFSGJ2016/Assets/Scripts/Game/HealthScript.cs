@@ -5,19 +5,20 @@ using UnityEngine.UI;
 public class HealthScript : MonoBehaviour
 {
     public int health = 100;
+    public bool deathWhenNoHealth = true;
     public Slider healthBar;
     public AudioClip deathClip;
-    AudioSource audio;
+    AudioSource audioSource;
 
     // Use this for initialization
     void Start()
     {
         if (healthBar != null)
         {
-            healthBar.value = health;
             healthBar.maxValue = health;
+            healthBar.value = health;
         }
-        audio = GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
 
     }
 
@@ -31,7 +32,7 @@ public class HealthScript : MonoBehaviour
         health -= dmg;
         if (healthBar != null)
             healthBar.value = health;
-        if (health <= 0)
+        if (health <= 0 && deathWhenNoHealth)
             Die();
     }
 
@@ -40,6 +41,7 @@ public class HealthScript : MonoBehaviour
 		health += healthValue;
 		if (health > 100)
 			health = 100;
+
 	}
 
     public void Die()
@@ -48,9 +50,13 @@ public class HealthScript : MonoBehaviour
     }
     IEnumerator CDie()
     {
-        //Odpal animacje, odegraj dźwięk i odpal particle???
-        if (audio != null && deathClip != null)
-            audio.PlayOneShot(deathClip, 1f);
+        MeshRenderer meshRenderer = GetComponent<MeshRenderer>();
+
+        if (GetComponent<MeshRenderer>() != null)
+            meshRenderer.enabled = false;
+        
+        if (audioSource != null && deathClip != null)
+            audioSource.PlayOneShot(deathClip, 1f);
         yield return new WaitForSeconds(0.5f);
 
         Destroy(gameObject);
