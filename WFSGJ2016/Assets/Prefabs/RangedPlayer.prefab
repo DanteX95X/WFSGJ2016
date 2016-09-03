@@ -31,15 +31,8 @@ GameObject:
   - 50: {fileID: 5073060}
   - 114: {fileID: 11439194}
   - 114: {fileID: 891595668}
-<<<<<<< HEAD
-  - 82: {fileID: 82000010680196032}
-=======
   - 82: {fileID: 82000011114584948}
-<<<<<<< HEAD
->>>>>>> 5764a62ab6279c9aa2c5aad5235c1b91546269f6
-=======
   - 58: {fileID: 58000012661635262}
->>>>>>> 12c7f7dbfda6f4445e1c2b6ec43cf04e23ec8005
   m_Layer: 0
   m_Name: RangedPlayer
   m_TagString: Player
@@ -59,14 +52,8 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 420362}
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
   - {fileID: 4000010505740462}
->>>>>>> 12c7f7dbfda6f4445e1c2b6ec43cf04e23ec8005
   - {fileID: 4000013831424660}
->>>>>>> 5764a62ab6279c9aa2c5aad5235c1b91546269f6
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &420362
@@ -199,10 +186,7 @@ MonoBehaviour:
   bullet: {fileID: 175128, guid: 581e535475b6b9f4c822e0a25e29c99a, type: 2}
   healingBullet: {fileID: 1000010561610676, guid: b9e835af397a37d49b98c14105b20639,
     type: 2}
-<<<<<<< HEAD
-=======
   ammoCounter: {fileID: 0}
->>>>>>> 5764a62ab6279c9aa2c5aad5235c1b91546269f6
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
@@ -229,9 +213,6 @@ MonoBehaviour:
   deathWhenNoHealth: 1
   healthBar: {fileID: 0}
   deathClip: {fileID: 0}
-<<<<<<< HEAD
---- !u!82 &82000010680196032
-=======
 --- !u!1 &1000010766808392
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,7 +286,6 @@ CircleCollider2D:
   serializedVersion: 2
   m_Radius: 0.5
 --- !u!82 &82000011114584948
->>>>>>> 5764a62ab6279c9aa2c5aad5235c1b91546269f6
 AudioSource:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -316,11 +296,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 10825137b0c0acb4baff9c7b79d41db6, type: 3}
   m_PlayOnAwake: 0
-<<<<<<< HEAD
-  m_Volume: 1
-=======
   m_Volume: 0.5
->>>>>>> 5764a62ab6279c9aa2c5aad5235c1b91546269f6
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -371,11 +347,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-<<<<<<< HEAD
-    m_RotationOrder: 4
-=======
     m_RotationOrder: 0
->>>>>>> 5764a62ab6279c9aa2c5aad5235c1b91546269f6
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -387,10 +359,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
 --- !u!120 &120000013205255568
 LineRenderer:
   m_ObjectHideFlags: 1
@@ -433,7 +401,6 @@ LineRenderer:
       serializedVersion: 2
       rgba: 4294967295
   m_UseWorldSpace: 0
->>>>>>> 12c7f7dbfda6f4445e1c2b6ec43cf04e23ec8005
 --- !u!120 &120000013261367700
 LineRenderer:
   m_ObjectHideFlags: 1
@@ -476,4 +443,3 @@ LineRenderer:
       serializedVersion: 2
       rgba: 4294967295
   m_UseWorldSpace: 0
->>>>>>> 5764a62ab6279c9aa2c5aad5235c1b91546269f6
