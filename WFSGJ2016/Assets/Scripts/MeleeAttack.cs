@@ -4,10 +4,12 @@ using System.Collections;
 public class MeleeAttack : MonoBehaviour {
 
     public int damage = 20;
+    AudioSource asource;
+
 
 	// Use this for initialization
 	void Start () {
-	
+        asource = GetComponent<AudioSource>();
 	}
 	
 	// Update is called once per frame
@@ -20,6 +22,8 @@ public class MeleeAttack : MonoBehaviour {
         if (collider.tag == "Enemy")
         {
             collider.GetComponent<HealthScript>().TakeDamage(damage);
+            if(asource != null)
+                asource.PlayOneShot(asource.clip);
         }
     }
 }

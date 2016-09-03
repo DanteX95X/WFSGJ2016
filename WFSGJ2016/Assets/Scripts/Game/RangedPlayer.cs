@@ -23,12 +23,14 @@ public class RangedPlayer : MonoBehaviour, IMortal
 
     Rigidbody2D rb;
     Text ammoCounter;
+    AudioSource asource;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         ammoCounter = FindObjectOfType<Text>();
         ammoCounter.text = ammunitionRounds.ToString();
+        asource = GetComponent<AudioSource>();
     }
 
     void Update ()
@@ -46,6 +48,7 @@ public class RangedPlayer : MonoBehaviour, IMortal
                     (Instantiate(bullet, transform.position, transform.rotation) as GameObject).GetComponent<Bullet>().ParentCharacter = gameObject;
                 --ammunitionRounds;
                 ammoCounter.text = (Int32.Parse(ammoCounter.text) - 1).ToString();
+                asource.PlayOneShot(asource.clip);
             }
         }
         float moveValue = 0.0f;
@@ -67,7 +70,7 @@ public class RangedPlayer : MonoBehaviour, IMortal
             moveValue = -movementSpeed;
         }
         rb.velocity = transform.up * moveValue * Time.deltaTime;
-	}
+    }
 
     public void Die()
     {
