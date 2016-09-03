@@ -9,12 +9,16 @@ namespace Assets.Scripts.Enemy
     {
         float deltaMove = 0f;
 
+        //[SerializeField]
+        float speed = 100;
+
         [SerializeField]
         float minTime = 1f;
 
         [SerializeField]
         float maxTime = 3f;
 
+        bool isMoving;
 
         float spawnTime = 0f;
         float time = 0f;
@@ -50,6 +54,8 @@ namespace Assets.Scripts.Enemy
             SetSpawnTime();
             time = 0;
 
+            isMoving = true;
+
             meleePlayer = FindObjectOfType<MeleePlayerController>();
         }
 
@@ -58,7 +64,7 @@ namespace Assets.Scripts.Enemy
             deltaMove = Time.deltaTime*1;
             if (Mathf.Abs(transform.position.x) > 0.1f || Mathf.Abs(transform.position.y) > 0.1f)
             {
-                transform.position += diffPosition * deltaMove;
+                if (isMoving == true) transform.position += diffPosition * deltaMove;
             }
             else
             {
@@ -70,9 +76,25 @@ namespace Assets.Scripts.Enemy
             if (time >= spawnTime)
             {
 
-                SpawnBullet();
-                SetSpawnTime();
+                if (meleePlayer != null && (Quaternion.LookRotation(new Vector3(0, 0, 1), meleePlayer.transform.position - transform.position).eulerAngles - transform.rotation.eulerAngles).magnitude > 5)
+                {
+                    isMoving = false;
+                    Debug.Log("Rotation");
+                    Rotate(Quaternion.LookRotation(new Vector3(0, 0, 1), meleePlayer.transform.position - transform.position));
+                }
+                else
+                {
+                    SpawnBullet();
+                    SetSpawnTime();
+                   // transform.rotation = Quaternion.LookRotation(new Vector3(0, 0, 1), diffPosition);
+                    isMoving = true;
+                }
             }
+            else
+            {
+                Rotate(Quaternion.LookRotation(new Vector3(0, 0, 1), diffPosition));
+            }
+
 
             if (healthScript.health <= 0.0f && !dead)
             {
@@ -80,6 +102,12 @@ namespace Assets.Scripts.Enemy
                 DropCollectible();
                 healthScript.Die();
             }
+        }
+
+        void Rotate(Quaternion to)
+        {
+            float step = speed * Time.deltaTime;
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, to , step);
         }
 
         void SpawnBullet()
