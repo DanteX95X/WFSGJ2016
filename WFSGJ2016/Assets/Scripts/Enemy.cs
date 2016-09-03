@@ -9,8 +9,13 @@ namespace Assets.Scripts.Enemy
     {
         float deltaMove = 0f;
 
+        [SerializeField]
         float minTime = 1f;
+
+        [SerializeField]
         float maxTime = 3f;
+
+
         float spawnTime = 0f;
         float time = 0f;
         public int houseDamage = 10;

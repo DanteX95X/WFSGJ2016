@@ -3,8 +3,12 @@ using System.Collections;
 
 public class EnemyController : MonoBehaviour {
 
+    [SerializeField]
     float minTime = 3f;
+
+    [SerializeField]
     float maxTime = 9f;
+
     float spawnTime = 0f;
     float time = 0f;
 
