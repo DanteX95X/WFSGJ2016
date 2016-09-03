@@ -652,7 +652,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 463038, guid: 6b7a6ede491ce480eb76215da5f85993, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 1
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 463038, guid: 6b7a6ede491ce480eb76215da5f85993, type: 2}
       propertyPath: m_LocalRotation.x
@@ -880,6 +880,16 @@ Prefab:
         type: 2}
       propertyPath: m_Pivot.y
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000013972145684, guid: 654a4cbbc1ddf2440a36b4bd53eb6b7a,
+        type: 2}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224000013972145684, guid: 654a4cbbc1ddf2440a36b4bd53eb6b7a,
+        type: 2}
+      propertyPath: m_AnchorMax.y
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 654a4cbbc1ddf2440a36b4bd53eb6b7a, type: 2}
