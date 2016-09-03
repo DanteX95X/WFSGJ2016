@@ -25,7 +25,7 @@ GameObject:
   - 114: {fileID: 114000014225437052}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000011018119108}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd368b2255006e44e85ece15c2e1cff7, type: 3}
+  m_Script: {fileID: 11500000, guid: 622be5e6b07a86748982629c6c59b014, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 1000012455424572, guid: 36266f3e2f5372a48b8bcedb16945f8b, type: 2}
+  bullet: {fileID: 1000013737910666, guid: 581e535475b6b9f4c822e0a25e29c99a, type: 2}

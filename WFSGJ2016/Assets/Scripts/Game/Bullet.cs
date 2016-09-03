@@ -31,7 +31,7 @@ public class Bullet : MonoBehaviour
     {
         if (collider.gameObject != ParentCharacter && (collider.gameObject.tag == "Player" || collider.gameObject.tag == "Enemy"))
         {
-            collider.gameObject.GetComponent<IMortal>().Die();
+            //collider.gameObject.GetComponent<IMortal>().Die();
             Debug.Log("Character has been shot");
         }
 
