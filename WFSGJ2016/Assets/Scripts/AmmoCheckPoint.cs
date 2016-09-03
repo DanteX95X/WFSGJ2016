@@ -36,6 +36,7 @@ public class AmmoCheckPoint : MonoBehaviour {
                 thrownAmmo.GetComponent<Rigidbody2D>().AddForce((transform.position - collider.gameObject.transform.position) * 3);
                 StartCoroutine(RestoreTrigger(thrownAmmo, collider.gameObject));
                 meleeController.temporaryAmmo = 0;
+                meleeController.SetGUIAmmo();
             }
         }
     }
