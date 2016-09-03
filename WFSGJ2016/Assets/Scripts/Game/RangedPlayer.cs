@@ -19,7 +19,19 @@ public class RangedPlayer : MonoBehaviour, IMortal
 
 	void Update ()
     {
-	    if(Input.GetKey(KeyCode.LeftArrow))
+        if (Input.GetKeyUp(KeyCode.Space))
+        {
+            Debug.Log(hasHealingShot);
+            if (hasHealingShot)
+            {
+                (Instantiate(healingBullet, transform.position, transform.rotation) as GameObject).GetComponent<HealingBullet>().ParentCharacter = gameObject;
+                hasHealingShot = false;
+            }
+            else
+                (Instantiate(bullet, transform.position, transform.rotation) as GameObject).GetComponent<Bullet>().ParentCharacter = gameObject;
+        }
+
+        if (Input.GetKey(KeyCode.LeftArrow))
         {
             transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
         }
@@ -34,17 +46,6 @@ public class RangedPlayer : MonoBehaviour, IMortal
         if(Input.GetKey(KeyCode.DownArrow))
         {
             transform.position += -transform.up * movementSpeed * Time.deltaTime;
-        }
-
-        if(Input.GetKeyUp(KeyCode.Space))
-        {
-            if(hasHealingShot)
-            {
-                (Instantiate(healingBullet, transform.position, transform.rotation) as GameObject).GetComponent<Bullet>().ParentCharacter = gameObject;
-                hasHealingShot = false;
-            }
-            else
-                (Instantiate(bullet, transform.position, transform.rotation) as GameObject).GetComponent<Bullet>().ParentCharacter = gameObject;
         }
 	}
 

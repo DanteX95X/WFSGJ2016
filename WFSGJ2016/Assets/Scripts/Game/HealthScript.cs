@@ -40,6 +40,7 @@ public class HealthScript : MonoBehaviour
 		health += healthValue;
 		if (health > 100)
 			health = 100;
+
 	}
 
     public void Die()
