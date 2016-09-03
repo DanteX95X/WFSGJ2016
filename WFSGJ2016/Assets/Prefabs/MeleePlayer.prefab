@@ -330,6 +330,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
+  deathWhenNoHealth: 1
   healthBar: {fileID: 114000010187772114}
   deathClip: {fileID: 0}
 --- !u!114 &114000011171183140
