@@ -408,7 +408,7 @@ GameObject:
   - 4: {fileID: 4000010302649354}
   - 114: {fileID: 114000013454778518}
   m_Layer: 0
-  m_Name: House 1
+  m_Name: House
   m_TagString: House
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
