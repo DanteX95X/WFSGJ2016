@@ -9,6 +9,7 @@ public class GameManagerScript : MonoBehaviour {
 
     GameObject house;
     GameObject melee;
+    GameObject ranged;
     Button ret;
 	// Use this for initialization
 	void Start () {
@@ -17,6 +18,7 @@ public class GameManagerScript : MonoBehaviour {
         ret = GameObject.Find("Return").GetComponent<Button>();
         house = GameObject.Find("House");
         melee = GameObject.Find("MeleePlayer");
+        ranged = GameObject.Find("RangedPlayer");
 	}
 	
 	// Update is called once per frame
@@ -31,7 +33,7 @@ public class GameManagerScript : MonoBehaviour {
 
     void checkOver()
     {
-        if (house == null || melee == null)
+        if (house == null || melee == null || ranged == null)
         {
             Time.timeScale = 0;
             gameOver.enabled = true;
