@@ -11,11 +11,18 @@ public class RangedPlayer : MonoBehaviour, IMortal
 
     [SerializeField]
     GameObject bullet = null;
+
+    Rigidbody2D rb;
 	
-    
+    void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
 
 	void Update ()
     {
+        float moveValue = 0.0f;
+
 	    if(Input.GetKey(KeyCode.LeftArrow))
         {
             transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
@@ -26,12 +33,14 @@ public class RangedPlayer : MonoBehaviour, IMortal
         }
         if(Input.GetKey(KeyCode.UpArrow))
         {
-            transform.position += transform.up * movementSpeed * Time.deltaTime;
+            moveValue = movementSpeed;
         }
         if(Input.GetKey(KeyCode.DownArrow))
         {
-            transform.position += -transform.up * movementSpeed * Time.deltaTime;
+            moveValue = -movementSpeed;
         }
+
+        rb.velocity = transform.up * moveValue * Time.deltaTime;
 
         if(Input.GetKeyUp(KeyCode.Space))
         {
