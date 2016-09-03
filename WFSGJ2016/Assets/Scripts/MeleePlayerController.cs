@@ -9,6 +9,7 @@ public class MeleePlayerController : MonoBehaviour {
     CircleCollider2D attackCollider;
     Faceing faceing;
 	Rigidbody2D rb;
+	Animator animator;
 
     float attackDelay = 0.5f;
 
@@ -23,6 +24,7 @@ public class MeleePlayerController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         attackCollider = attackColliderGO.GetComponent<CircleCollider2D>();
+		animator = GetComponent<Animator>();
 		rb = GetComponent<Rigidbody2D>();
 	}
 	
@@ -54,6 +56,11 @@ public class MeleePlayerController : MonoBehaviour {
             else if (Input.GetAxis("Player1Vertical") > 0.0f)
                 faceing = Faceing.Up;
         }
+
+		if (newYpos < 0.0f)
+			animator.SetBool("walkDown", true);
+		else
+			animator.SetBool("walkDown", false);
 
 		rb.velocity = new Vector2(newXpos, newYpos);
 	}
