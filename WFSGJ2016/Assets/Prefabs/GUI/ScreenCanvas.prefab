@@ -54,7 +54,7 @@ GameObject:
   - 222: {fileID: 222000010989108812}
   - 114: {fileID: 114000011862037380}
   m_Layer: 0
-  m_Name: Text
+  m_Name: ammoText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

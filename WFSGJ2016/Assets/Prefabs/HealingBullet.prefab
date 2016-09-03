@@ -24,7 +24,7 @@ GameObject:
   - 61: {fileID: 61000012702990424}
   - 50: {fileID: 50000012637423556}
   - 114: {fileID: 114000011255020080}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: HealingBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,4 +124,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 15
   damage: 1
-  healingValue: 2
+  healingValue: 5

@@ -8,13 +8,13 @@ public class AmmoCollectible : Collectible
 
 	int ammoReplenishment = 15;
 
-    public Text guiCounter = null;
+    //public Text guiCounter = null;
 
     Text ammoCounter;
 
 	void Start ()
     {
-        ammoCounter = GameObject.FindObjectOfType<Text>();
+        ammoCounter = GameObject.Find("ammoText").GetComponent<Text>();
 	}
 	
 	void Update ()
