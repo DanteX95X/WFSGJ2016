@@ -131,11 +131,12 @@ MonoBehaviour:
   minTime: 1
   maxTime: 2
   houseDamage: 10
-  bullet: {fileID: 175128, guid: 581e535475b6b9f4c822e0a25e29c99a, type: 2}
+  bullet: {fileID: 1000013276537262, guid: 581e535475b6b9f4c822e0a25e29c99a, type: 2}
   collectibles:
   - {fileID: 158994, guid: 12b817dcfe3b441cdaec3a5cd59844ef, type: 2}
   - {fileID: 127914, guid: 1a2599d37297b41d1a43a5befd4114f0, type: 2}
   dropProbability: 1
+  camera_controller: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

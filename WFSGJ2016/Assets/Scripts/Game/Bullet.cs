@@ -11,6 +11,15 @@ public class Bullet : MonoBehaviour
 
     float counter = 0;
 
+    private Transform particle_emmiter;
+	private ParticleSystem hitMark;
+	
+    void Start()
+    {	
+		particle_emmiter = gameObject.transform.Find("HitMark");
+		hitMark = particle_emmiter.GetComponent<ParticleSystem>();
+    }
+	
 	protected void Update ()
     {
         transform.position += transform.up * movementSpeed * Time.deltaTime;
@@ -34,6 +43,15 @@ public class Bullet : MonoBehaviour
         }
 
         if (collider.gameObject != ParentCharacter && collider.gameObject.tag != "Collectible" && collider.gameObject.tag != "AmmoCheckPoint")
+		{
+			// Unparent the particles from the bullet.
+			hitMark.transform.parent = null;
+			hitMark.Play();
+			hitMark.Emit(20);	//count
+			// Once the particles have finished, destroy the gameobject they are on.
+			Destroy(hitMark.gameObject, hitMark.duration);
+			
             Destroy(gameObject);
+		}
     }
 }
