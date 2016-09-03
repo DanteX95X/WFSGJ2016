@@ -53,7 +53,11 @@ public class HealthScript : MonoBehaviour
         MeshRenderer meshRenderer = GetComponent<MeshRenderer>();
 
         if (GetComponent<MeshRenderer>() != null)
+        {
             meshRenderer.enabled = false;
+            foreach (MeshRenderer child in transform.GetComponentsInChildren<MeshRenderer>())
+                child.enabled = false;
+        }
         
         if (audioSource != null && deathClip != null)
             audioSource.PlayOneShot(deathClip, 1f);

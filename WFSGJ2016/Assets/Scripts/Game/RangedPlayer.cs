@@ -12,7 +12,6 @@ public class RangedPlayer : MonoBehaviour, IMortal
     [SerializeField]
     GameObject bullet = null;
 
-//<<<<<<< HEAD
     [SerializeField]
     GameObject healingBullet = null;
 
@@ -29,7 +28,6 @@ public class RangedPlayer : MonoBehaviour, IMortal
     {
         if (Input.GetKeyUp(KeyCode.Space))
         {
-            Debug.Log(hasHealingShot);
             if (hasHealingShot)
             {
                 (Instantiate(healingBullet, transform.position, transform.rotation) as GameObject).GetComponent<HealingBullet>().ParentCharacter = gameObject;
@@ -38,17 +36,9 @@ public class RangedPlayer : MonoBehaviour, IMortal
             else
                 (Instantiate(bullet, transform.position, transform.rotation) as GameObject).GetComponent<Bullet>().ParentCharacter = gameObject;
         }
-
-        //if (Input.GetKey(KeyCode.LeftArrow))
-//=======
-    
-
-//	void Update ()
-//    {
         float moveValue = 0.0f;
 
 	    if(Input.GetKey(KeyCode.LeftArrow))
-//>>>>>>> d03d221d04d055bcd3b41f8ed85f515fc3a1666a
         {
             transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
         }
@@ -64,16 +54,7 @@ public class RangedPlayer : MonoBehaviour, IMortal
         {
             moveValue = -movementSpeed;
         }
-//<<<<<<< HEAD
-//=======
-
         rb.velocity = transform.up * moveValue * Time.deltaTime;
-
-/*        if(Input.GetKeyUp(KeyCode.Space))
-        {
-            (Instantiate(bullet, transform.position, transform.rotation) as GameObject).GetComponent<Bullet>().ParentCharacter = gameObject;
-        }
->>>>>>> d03d221d04d055bcd3b41f8ed85f515fc3a1666a*/
 	}
 
     public void Die()
