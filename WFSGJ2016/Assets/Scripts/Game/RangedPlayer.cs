@@ -12,6 +12,8 @@ public class RangedPlayer : MonoBehaviour, IMortal
     [SerializeField]
     GameObject bullet = null;
 	
+    
+
 	void Update ()
     {
 	    if(Input.GetKey(KeyCode.LeftArrow))

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class MainMenuScript : MonoBehaviour {
 
@@ -23,7 +24,7 @@ public class MainMenuScript : MonoBehaviour {
         if (clickAudio != null)
             clickAudio.Play();
         yield return new WaitForSeconds(0.5f);
-        Application.LoadLevel(Application.loadedLevel + 1);
+        SceneManager.LoadScene("Game");
     }
     public void EndGame()
     {
