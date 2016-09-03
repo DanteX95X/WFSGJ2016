@@ -31,6 +31,7 @@ public class AmmoCheckPoint : MonoBehaviour {
             {
                 GameObject thrownAmmo = Instantiate(ammoPickUp, transform.position, Quaternion.identity) as GameObject;
                 collider.gameObject.GetComponent<MeleePlayerController>().child = thrownAmmo.GetComponent<AmmoCollectible>();
+                thrownAmmo.gameObject.GetComponent<AmmoCollectible>().ammoReplenishment = meleeController.temporaryAmmo;
                 thrownAmmo.GetComponent<CircleCollider2D>().isTrigger = false;
                 thrownAmmo.GetComponent<Rigidbody2D>().AddForce((transform.position - collider.gameObject.transform.position) * 3);
                 StartCoroutine(RestoreTrigger(thrownAmmo, collider.gameObject));
