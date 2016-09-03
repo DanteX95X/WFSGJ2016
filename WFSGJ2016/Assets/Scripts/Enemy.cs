@@ -41,6 +41,8 @@ namespace Assets.Scripts.Enemy
 
         MeleePlayerController meleePlayer;
         AudioSource asource;
+		
+		public CameraControllerTwoPlayers camera_controller; 
 
         void Start()
         {
@@ -136,6 +138,7 @@ namespace Assets.Scripts.Enemy
             if (collision.gameObject.tag == "House")
             {
                 collision.collider.gameObject.GetComponentInParent<HealthScript>().TakeDamage(houseDamage);
+				camera_controller.RemoveTarget(transform);
                 Destroy(this.gameObject);
             }
         }

@@ -35,8 +35,12 @@ public class MeleePlayerController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        Move();
+        // Move();
         Attack();
+	}
+	
+	void FixedUpdate () {
+        Move();
 	}
 
 	void Move()
