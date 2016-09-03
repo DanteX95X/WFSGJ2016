@@ -36,9 +36,11 @@ namespace Assets.Scripts.Enemy
         Vector3 destinationPosition = new Vector3(0, 0, 0);
 
         MeleePlayerController meleePlayer;
+        AudioSource asource;
 
         void Start()
         {
+            asource = GetComponent<AudioSource>();
             Debug.Log("Enemy spawned!");
 
             healthScript = GetComponent<HealthScript>();
@@ -87,7 +89,10 @@ namespace Assets.Scripts.Enemy
             Debug.Log("spawning bullet");
             time = minTime;
             if (transform != null && meleePlayer != null)
-                (Instantiate(bullet, transform.position, Quaternion.LookRotation(new Vector3(0,0,1), meleePlayer.transform.position - transform.position)) as GameObject).GetComponent<Bullet>().ParentCharacter = gameObject;
+            {
+                (Instantiate(bullet, transform.position, Quaternion.LookRotation(new Vector3(0, 0, 1), meleePlayer.transform.position - transform.position)) as GameObject).GetComponent<Bullet>().ParentCharacter = gameObject;
+                asource.PlayOneShot(asource.clip);
+            }
         }
 
         public void SetDestination(Vector3 destination)
