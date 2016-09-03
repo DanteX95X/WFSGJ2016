@@ -27,13 +27,15 @@ public class Bullet : MonoBehaviour
             Destroy(gameObject);
     }
 
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collision.gameObject != ParentCharacter && (collision.gameObject.tag == "Player" || collision.gameObject.tag == "Enemy"))
+        if (collider.gameObject != ParentCharacter && (collider.gameObject.tag == "Player" || collider.gameObject.tag == "Enemy"))
         {
-            collision.gameObject.GetComponent<IMortal>().Die();
+            collider.gameObject.GetComponent<IMortal>().Die();
             Debug.Log("Character has been shot");
-            Destroy(gameObject);
         }
+
+        if (collider.gameObject != ParentCharacter)
+            Destroy(gameObject);
     }
 }
