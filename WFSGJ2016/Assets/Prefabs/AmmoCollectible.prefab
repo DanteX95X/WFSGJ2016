@@ -12,7 +12,8 @@ GameObject:
   - 23: {fileID: 2382362}
   - 58: {fileID: 5824924}
   - 114: {fileID: 11405958}
-  m_Layer: 0
+  - 50: {fileID: 50000012367102190}
+  m_Layer: 11
   m_Name: AmmoCollectible
   m_TagString: Collectible
   m_Icon: {fileID: 0}
@@ -118,3 +119,20 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 158994}
   m_IsPrefabParent: 1
+--- !u!50 &50000012367102190
+Rigidbody2D:
+  serializedVersion: 2
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 158994}
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
