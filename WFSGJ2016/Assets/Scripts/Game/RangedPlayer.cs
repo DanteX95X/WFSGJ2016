@@ -16,6 +16,11 @@ public class RangedPlayer : MonoBehaviour, IMortal
 
     [SerializeField]
     GameObject healingBullet = null;
+	
+    // public GameObject muzzleFlash;
+    // public GameObject muzzle;
+    private Transform muzzle;
+	private ParticleSystem muzzleFlash;
 
     bool hasHealingShot = false;
 
@@ -30,6 +35,9 @@ public class RangedPlayer : MonoBehaviour, IMortal
         rb = GetComponent<Rigidbody2D>();
         ammoCounter.text = ammunitionRounds.ToString();
         asource = GetComponent<AudioSource>();
+		
+		muzzle = gameObject.transform.Find("GunMuzzle");
+		muzzleFlash = muzzle.GetComponent<ParticleSystem>();
     }
 
     void Update ()
@@ -44,7 +52,13 @@ public class RangedPlayer : MonoBehaviour, IMortal
                     hasHealingShot = false;
                 }
                 else
+				{
                     (Instantiate(bullet, transform.position, transform.rotation) as GameObject).GetComponent<Bullet>().ParentCharacter = gameObject;
+					// muzzle flash
+                    // Instantiate(muzzleFlash, muzzle.position, muzzle.rotation);
+					muzzleFlash.Play();
+					muzzleFlash.Emit(25);	//count
+				}
                 --ammunitionRounds;
                 ammoCounter.text = (Int32.Parse(ammoCounter.text) - 1).ToString();
                 asource.PlayOneShot(asource.clip);
