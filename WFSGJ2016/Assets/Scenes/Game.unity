@@ -375,6 +375,27 @@ Prefab:
       propertyPath: m_Text
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114000011862037380, guid: 9795983d0dcca9347b9b8a34e33653a0,
+        type: 2}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 9aca2addca0d3ed4183542a482719920,
+        type: 3}
+    - target: {fileID: 114000011862037380, guid: 9795983d0dcca9347b9b8a34e33653a0,
+        type: 2}
+      propertyPath: m_FontData.m_FontStyle
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011862037380, guid: 9795983d0dcca9347b9b8a34e33653a0,
+        type: 2}
+      propertyPath: m_FontData.m_AlignByGeometry
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000011862037380, guid: 9795983d0dcca9347b9b8a34e33653a0,
+        type: 2}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9795983d0dcca9347b9b8a34e33653a0, type: 2}
   m_IsPrefabParent: 0
@@ -731,7 +752,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 1, g: 0.8154158, b: 0.33088237, a: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
