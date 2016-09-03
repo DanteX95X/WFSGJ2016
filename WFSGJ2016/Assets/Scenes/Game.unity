@@ -183,27 +183,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
---- !u!1 &208581583 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 115406, guid: adf4808677e764794bf371f91bb37b20, type: 2}
-  m_PrefabInternal: {fileID: 1977418889}
---- !u!95 &208581591
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 208581583}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 38edfaf1642e64a2c94543d4d8025582, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &266362976
 GameObject:
   m_ObjectHideFlags: 0
@@ -424,6 +403,12 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 981769420}
   m_Script: {fileID: 708705254, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+--- !u!114 &1250236754 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114000010790258430, guid: 9795983d0dcca9347b9b8a34e33653a0,
+    type: 2}
+  m_PrefabInternal: {fileID: 981769420}
+  m_Script: {fileID: -113659843, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
 --- !u!1001 &1707586058
 Prefab:
   m_ObjectHideFlags: 0
@@ -493,6 +478,11 @@ Prefab:
       propertyPath: ammoCounter
       value: 
       objectReference: {fileID: 1184468234}
+    - target: {fileID: 114000013454778518, guid: 59b233e405ed2ff40b773b68854d9b9e,
+        type: 2}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 1250236754}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 59b233e405ed2ff40b773b68854d9b9e, type: 2}
   m_IsPrefabParent: 0
@@ -690,23 +680,7 @@ Prefab:
       propertyPath: m_AnchorMax.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114000011427815938, guid: adf4808677e764794bf371f91bb37b20,
-        type: 2}
-      propertyPath: movementSpeed
-      value: 300
-      objectReference: {fileID: 0}
-    - target: {fileID: 114000010626391232, guid: adf4808677e764794bf371f91bb37b20,
-        type: 2}
-      propertyPath: health
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 21239862, guid: adf4808677e764794bf371f91bb37b20, type: 2}
-      propertyPath: m_Sprite
-      value: 
-      objectReference: {fileID: 21300000, guid: f7f8a8fbea2f740c0a337b8188f32025,
-        type: 3}
-    m_RemovedComponents:
-    - {fileID: 11430194, guid: adf4808677e764794bf371f91bb37b20, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: adf4808677e764794bf371f91bb37b20, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &2093696151
