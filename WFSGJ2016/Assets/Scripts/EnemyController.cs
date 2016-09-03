@@ -29,12 +29,10 @@ public class EnemyController : MonoBehaviour {
 	
 	void Update ()
     {
-
         time += Time.deltaTime;
 
         if (time >= spawnTime)
         {
-
             SpawnEnemy();
             SetSpawnTime();
         }
@@ -76,6 +74,14 @@ public class EnemyController : MonoBehaviour {
 
     Vector3 RandomDestination()
     {
-        return houses[Random.Range(0,houses.Length-1)].transform.position;
+        if (houses != null)
+        {
+            return houses[Random.Range(0, houses.Length - 1)].transform.position;
+        }
+        else
+        {
+            return new Vector3(0, 0, 0);
+        }
     }
+        
 }

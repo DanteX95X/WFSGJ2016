@@ -28,7 +28,6 @@ public class RangedPlayer : MonoBehaviour, IMortal
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        //ammoCounter = FindObjectOfType<Text>();
         ammoCounter.text = ammunitionRounds.ToString();
         asource = GetComponent<AudioSource>();
     }

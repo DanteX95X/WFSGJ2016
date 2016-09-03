@@ -6,15 +6,15 @@ using System;
 public class AmmoCollectible : Collectible
 {
 
-	int ammoReplenishment = 15;
+	public int ammoReplenishment = 15;
 
-    public Text guiCounter = null;
+    //public Text guiCounter = null;
 
-    Text ammoCounter;
+    public Text ammoCounter;
 
 	void Start ()
     {
-        ammoCounter = GameObject.FindObjectOfType<Text>();
+        ammoCounter = GameObject.Find("ammoText").GetComponent<Text>();
 	}
 	
 	void Update ()
@@ -25,8 +25,11 @@ public class AmmoCollectible : Collectible
 	public override void Collect()
 	{
         //GameController.Instance.ammo += ammoReplenishment;
-        GameObject.FindObjectOfType<RangedPlayer>().ReplenishAmmo(ammoReplenishment);
-        ammoCounter.text = (Int32.Parse(ammoCounter.text) + ammoReplenishment).ToString();
+        GameObject.FindObjectOfType<MeleePlayerController>().AddTemporaryAmmo(ammoReplenishment);
+       // ammoCounter.text = (Int32.Parse(ammoCounter.text) + ammoReplenishment).ToString();
+
+
+
 		base.Collect();
 	}
 }

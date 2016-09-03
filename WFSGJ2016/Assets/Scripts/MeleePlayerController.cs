@@ -6,6 +6,8 @@ public class MeleePlayerController : MonoBehaviour {
     public float movementSpeed = 100.0f;
     public GameObject attackColliderGO;
 
+    public int temporaryAmmo;
+
     CircleCollider2D attackCollider;
     Faceing faceing;
 	Rigidbody2D rb;
@@ -26,6 +28,7 @@ public class MeleePlayerController : MonoBehaviour {
         attackCollider = attackColliderGO.GetComponent<CircleCollider2D>();
 		animator = GetComponent<Animator>();
 		rb = GetComponent<Rigidbody2D>();
+        temporaryAmmo = 0;
 	}
 	
 	// Update is called once per frame
@@ -111,7 +114,7 @@ public class MeleePlayerController : MonoBehaviour {
 
     void Attack()
     {
-        if (Input.GetButton("Player1Attack"))
+        if (Input.GetButton("Player1Attack") && !GetComponent<CPRScipt>().inAgony )
         {
             if (faceing == Faceing.Up)
                 attackCollider.transform.position = new Vector3(transform.position.x, transform.position.y + 0.5f, transform.position.z);
@@ -149,4 +152,8 @@ public class MeleePlayerController : MonoBehaviour {
 		}
 	}
 
+    public void AddTemporaryAmmo(int value)
+    {
+        temporaryAmmo += value;
+    }
 }

@@ -9,51 +9,50 @@ Prefab:
     m_Modifications: []
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
-  m_RootGameObject: {fileID: 1000010561610676}
+  m_RootGameObject: {fileID: 1000012509498364}
   m_IsPrefabParent: 1
---- !u!1 &1000010561610676
+--- !u!1 &1000012509498364
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 4
   m_Component:
-  - 4: {fileID: 4000012780156532}
-  - 33: {fileID: 33000012579907060}
-  - 23: {fileID: 23000011936237064}
-  - 61: {fileID: 61000012702990424}
-  - 50: {fileID: 50000012637423556}
-  - 114: {fileID: 114000011255020080}
-  m_Layer: 10
-  m_Name: HealingBullet
-  m_TagString: Untagged
+  - 4: {fileID: 4000010529413568}
+  - 33: {fileID: 33000014156089606}
+  - 23: {fileID: 23000013421781144}
+  - 114: {fileID: 114000012680373246}
+  - 61: {fileID: 61000014214430520}
+  m_Layer: 0
+  m_Name: AmmoCheckWindow
+  m_TagString: AmmoCheckPoint
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4000012780156532
+--- !u!4 &4000010529413568
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010561610676}
-  m_LocalRotation: {x: 0, y: 0, z: 0.000000050250122, w: 1}
-  m_LocalPosition: {x: -0.30041885, y: -1.3938192, z: 0}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
+  m_GameObject: {fileID: 1000012509498364}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.22, y: 1.38, z: 0}
+  m_LocalScale: {x: 1.25, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!23 &23000011936237064
+--- !u!23 &23000013421781144
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010561610676}
-  m_Enabled: 1
+  m_GameObject: {fileID: 1000012509498364}
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
-  m_MotionVectors: 1
+  m_MotionVectors: 0
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
@@ -73,36 +72,19 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!33 &33000012579907060
+--- !u!33 &33000014156089606
 MeshFilter:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010561610676}
+  m_GameObject: {fileID: 1000012509498364}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!50 &50000012637423556
-Rigidbody2D:
-  serializedVersion: 2
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010561610676}
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 0
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
---- !u!61 &61000012702990424
+--- !u!61 &61000014214430520
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010561610676}
+  m_GameObject: {fileID: 1000012509498364}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -111,17 +93,15 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
---- !u!114 &114000011255020080
+--- !u!114 &114000012680373246
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000010561610676}
+  m_GameObject: {fileID: 1000012509498364}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf8f712933ad9b2409266d62e61da9db, type: 3}
+  m_Script: {fileID: 11500000, guid: a1465b07eb4cdb3499b44ff367439060, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 15
-  damage: 1
-  healingValue: 5
+  ammoCounter: {fileID: 0}

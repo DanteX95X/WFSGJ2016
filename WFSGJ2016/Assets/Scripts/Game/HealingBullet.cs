@@ -14,7 +14,7 @@ public class HealingBullet : Bullet
             Debug.Log("Companion has been healed");
         }
 
-        if (collider.gameObject != ParentCharacter)
+        if (collider.gameObject != ParentCharacter && collider.gameObject.tag != "AmmoCheckPoint")
             Destroy(gameObject);
     }
 }
