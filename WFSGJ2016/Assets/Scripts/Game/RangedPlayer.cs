@@ -22,13 +22,13 @@ public class RangedPlayer : MonoBehaviour, IMortal
     int ammunitionRounds = 20;
 
     Rigidbody2D rb;
-    Text ammoCounter;
+    public Text ammoCounter;
     AudioSource asource;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        ammoCounter = FindObjectOfType<Text>();
+        ammoCounter = GameObject.Find("ammoText").GetComponent<Text>();
         ammoCounter.text = ammunitionRounds.ToString();
         asource = GetComponent<AudioSource>();
     }
