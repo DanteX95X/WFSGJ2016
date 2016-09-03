@@ -1,4 +1,6 @@
 ﻿using UnityEngine;
+using System.Collections;
+using System.Collections.Generic;
 
 // source: https://unity3d.com/learn/tutorials/projects/tanks-tutorial
 
@@ -8,15 +10,23 @@ public class CameraControllerTwoPlayers : MonoBehaviour
     public float m_ScreenEdgeBuffer = 4f;           // Space between the top/bottom most target and the screen edge.
     public float m_MinSize = 6.5f;                  // The smallest orthographic size the camera can be.
     //[HideInInspector]
-    public Transform[] m_Targets; // All the targets the camera needs to encompass.
-
+    // public Transform[] m_Targets; // All the targets the camera needs to encompass.
+	public List<Transform> m_Targets = new List<Transform>();
 
     private Camera m_Camera;                        // Used for referencing the camera.
     private float m_ZoomSpeed;                      // Reference speed for the smooth damping of the orthographic size.
     private Vector3 m_MoveVelocity;                 // Reference velocity for the smooth damping of the position.
     private Vector3 m_DesiredPosition;              // The position the camera is moving towards.
 
-
+	public void AddTarget(Transform target)
+	{
+		m_Targets.Add(target);
+	}
+	public void RemoveTarget(Transform target)
+	{
+		m_Targets.Remove(target);
+	}
+	
     private void Awake()
     {
         m_Camera = GetComponentInChildren<Camera>();
