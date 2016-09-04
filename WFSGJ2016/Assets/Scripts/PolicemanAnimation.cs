@@ -19,7 +19,7 @@ public class PolicemanAnimation : MonoBehaviour {
         }
         else
         {
-            GetComponent<SpriteRenderer>().sortingOrder = -1;
+            GetComponent<SpriteRenderer>().sortingOrder = 0;
         }
 	}
 }
