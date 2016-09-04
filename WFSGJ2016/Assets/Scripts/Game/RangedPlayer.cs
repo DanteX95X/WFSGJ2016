@@ -63,7 +63,8 @@ public class RangedPlayer : MonoBehaviour, IMortal
 		}
 	
         //if (Input.GetKeyUp(KeyCode.Space))
-        if (Input.GetButtonDown("Player2Attack") && GetComponent<SpriteRenderer>().enabled)
+        // if (Input.GetButtonDown("Player2Attack") && GetComponent<SpriteRenderer>().enabled)
+        if (Input.GetButtonDown("Player2Attack"))
         //if (Input.GetButton("Fire1"))
         {
             if (ammunitionRounds > 0)
@@ -90,44 +91,6 @@ public class RangedPlayer : MonoBehaviour, IMortal
         }
 		
     }
-	
-	/*
-	private void FixedUpdate()
-	{
-		// Rotate();
-		// float moveValue = Move();
-
-        // rb.velocity = transform.up * moveValue * Time.deltaTime;
-	}
-	
-	private void Rotate()
-	{
-	    if(Input.GetKey(KeyCode.LeftArrow))
-        {
-            transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
-        }
-        if(Input.GetKey(KeyCode.RightArrow))
-        {
-            transform.Rotate(0, 0, -rotationSpeed * Time.deltaTime);
-        }
-	}
-	private float Move()
-	{
-        float moveValue = 0.0f;
-		
-		if(Input.GetKey(KeyCode.UpArrow))
-        {
-            moveValue = movementSpeed;
-        }
-        if(Input.GetKey(KeyCode.DownArrow))
-        {
-            moveValue = -movementSpeed;
-        }
-
-		
-		return moveValue;
-	}
-	*/
 
     public void Die()
     {
