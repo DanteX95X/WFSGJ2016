@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
+using Assets.Scripts.Enemy;
 
 public class HealthScript : MonoBehaviour
 {
@@ -54,12 +55,12 @@ public class HealthScript : MonoBehaviour
     }
     IEnumerator CDie()
     {
-        MeshRenderer meshRenderer = GetComponent<MeshRenderer>();
+        SpriteRenderer spriteRenderer = GetComponent<SpriteRenderer>();
 
-        if (GetComponent<MeshRenderer>() != null)
+        if (spriteRenderer != null)
         {
-            meshRenderer.enabled = false;
-            foreach (MeshRenderer child in transform.GetComponentsInChildren<MeshRenderer>())
+            spriteRenderer.enabled = false;
+            foreach (SpriteRenderer child in transform.GetComponentsInChildren<SpriteRenderer>())
                 child.enabled = false;
         }
         
@@ -72,7 +73,10 @@ public class HealthScript : MonoBehaviour
         }
         yield return new WaitForSeconds(0.5f);
 
+        
         Destroy(gameObject);
+        if (GetComponent<Enemy>() != null)
+            GetComponent<Enemy>().DropCollectible();
     }
 
 

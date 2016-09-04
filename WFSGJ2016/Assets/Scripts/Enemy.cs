@@ -83,6 +83,8 @@ namespace Assets.Scripts.Enemy
                 {
                     isMoving = false;
                     Rotate(Quaternion.LookRotation(new Vector3(0, 0, 1), meleePlayer.transform.position - transform.position));
+                    foreach (Transform child in transform)
+                        child.rotation = Quaternion.identity;
                 }
                 else
                 {
@@ -95,13 +97,15 @@ namespace Assets.Scripts.Enemy
             else
             {
                 Rotate(Quaternion.LookRotation(new Vector3(0, 0, 1), diffPosition));
+                foreach (Transform child in transform)
+                    child.rotation = Quaternion.identity;
             }
 
 
             if (healthScript.health <= 0.0f && !dead)
             {
                 dead = true;
-                DropCollectible();
+                //DropCollectible();
                 healthScript.Die();
             }
         }
@@ -143,7 +147,7 @@ namespace Assets.Scripts.Enemy
             }
         }
 
-        void DropCollectible()
+        public void DropCollectible()
         {
             if (Random.Range(0.0f, 1.0f) < dropProbability)
             {
