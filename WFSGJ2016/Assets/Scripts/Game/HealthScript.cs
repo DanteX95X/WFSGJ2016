@@ -65,6 +65,8 @@ public class HealthScript : MonoBehaviour
         
         if (audioSource != null && deathClip != null)
             audioSource.PlayOneShot(deathClip, 1f);
+        if (this.name == "Enemy(Clone)")
+            GameObject.Find("GameModeControler").GetComponent<GameModeScript>().intCounter +=1;
         yield return new WaitForSeconds(0.5f);
 
         Destroy(gameObject);

@@ -24,7 +24,7 @@ public class RangedPlayer : MonoBehaviour, IMortal
 
     bool hasHealingShot = false;
 
-    int ammunitionRounds = 20;
+    public int ammunitionRounds = 20;
 
     Rigidbody2D rb;
     public Text ammoCounter;
