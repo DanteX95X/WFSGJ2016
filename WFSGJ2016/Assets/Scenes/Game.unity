@@ -1443,6 +1443,11 @@ Prefab:
       propertyPath: m_Targets.Array.data[1]
       value: 
       objectReference: {fileID: 758714021}
+    - target: {fileID: 82000012648052066, guid: e4ba7ece8aca49a42ae4dc4615bcb970,
+        type: 2}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: e4ba7ece8aca49a42ae4dc4615bcb970, type: 2}
   m_IsPrefabParent: 0
