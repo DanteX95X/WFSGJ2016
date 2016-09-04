@@ -8,6 +8,7 @@ public class MainMenuScript : MonoBehaviour {
     AudioSource clickAudio;
 	void Start () {
         clickAudio = GetComponent<AudioSource>();
+        DontDestroyOnLoad(transform.gameObject);
 	
 	}
 	
@@ -24,7 +25,7 @@ public class MainMenuScript : MonoBehaviour {
         if (clickAudio != null)
             clickAudio.Play();
         yield return new WaitForSeconds(0.5f);
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("GameModes");
     }
     public void EndGame()
     {

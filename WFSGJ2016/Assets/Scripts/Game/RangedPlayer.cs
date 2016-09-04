@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 using System;
@@ -17,14 +17,13 @@ public class RangedPlayer : MonoBehaviour, IMortal
     [SerializeField]
     GameObject healingBullet = null;
 	
-    // public GameObject muzzleFlash;
-    // public GameObject muzzle;
     private Transform muzzle;
 	public ParticleSystem muzzleFlash;
 
     bool hasHealingShot = false;
 
-    int ammunitionRounds = 20;
+    //int ammunitionRounds = 20;
+    public int ammunitionRounds = 20;
 
     Rigidbody2D rb;
     public Text ammoCounter;
@@ -43,7 +42,9 @@ public class RangedPlayer : MonoBehaviour, IMortal
 
     void Update ()
     {
-        if (Input.GetButtonUp("Player2Attack"))
+        //if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetButtonDown("Player2Attack") && GetComponent<MeshRenderer>().enabled)
+        //if (Input.GetButton("Fire1"))
         {
             if (ammunitionRounds > 0)
             {
@@ -65,57 +66,46 @@ public class RangedPlayer : MonoBehaviour, IMortal
                 asource.PlayOneShot(asource.clip);
             }
         }
-        float moveValue = 0.0f;
+		
+    }
+	
+	/*
+	private void FixedUpdate()
+	{
+		// Rotate();
+		// float moveValue = Move();
 
-	    /*if(Input.GetKey(KeyCode.LeftArrow))
+        // rb.velocity = transform.up * moveValue * Time.deltaTime;
+	}
+	
+	private void Rotate()
+	{
+	    if(Input.GetKey(KeyCode.LeftArrow))
         {
             transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
         }
         if(Input.GetKey(KeyCode.RightArrow))
         {
             transform.Rotate(0, 0, -rotationSpeed * Time.deltaTime);
-        }*/
-        if(Input.GetButton("Player2Rotate"))
-        {
-            gun.transform.Rotate(0, 0, Input.GetAxis("Player2Rotate") * rotationSpeed * Time.deltaTime);
-            Debug.Log(gun.transform.rotation.eulerAngles);
-
-            Debug.Log(gun.transform.right);
-
-            if (!GetComponent<SpriteRenderer>().flipX)
-            {
-                if (gun.transform.right.x < 0.0f)
-                {
-                    GetComponent<SpriteRenderer>().flipX = true;
-                    gun.GetComponent<SpriteRenderer>().flipY = true;
-                }
-            }
-            else
-            {
-                if (gun.transform.right.x > 0.0f)
-                {
-                    GetComponent<SpriteRenderer>().flipX = false;
-                    gun.GetComponent<SpriteRenderer>().flipY = false;
-                }
-            }
-
         }
-        if(Input.GetButton("Player2Move"))
-        {
-            moveValue = Input.GetAxis("Player2Move") * movementSpeed;
-        }
-
-
-        /*if(Input.GetKey(KeyCode.UpArrow))
+	}
+	private float Move()
+	{
+        float moveValue = 0.0f;
+		
+		if(Input.GetKey(KeyCode.UpArrow))
         {
             moveValue = movementSpeed;
         }
         if(Input.GetKey(KeyCode.DownArrow))
         {
             moveValue = -movementSpeed;
-        }*/
-        rb.velocity = transform.up * moveValue * Time.deltaTime;
-    }
+        }
+
+		
+		return moveValue;
+	}
+	*/
 
     public void Die()
     {
