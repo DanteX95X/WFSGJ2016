@@ -124,4 +124,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSpeed: 15
   damage: 1
-  healingValue: 5
+  healingValue: 100
