@@ -10,20 +10,20 @@ public class RangedPlayerRotation : MonoBehaviour
     // private float camRayLength = 100f;          // The length of the ray from the camera into the scene.
 
     // private Rigidbody playerRigidbody;          // Reference to the player's rigidbody.
-    private Rigidbody2D playerRigidbody;          // Reference to the player's rigidbody.
+    // private Rigidbody2D playerRigidbody;          // Reference to the player's rigidbody.
 
 	private Camera mainCamera;
 	
 	// public int damping;	//var damping:int=2;
 
-    void Awake()
-    {
-        playerRigidbody = GetComponent<Rigidbody2D>();
-    }
+    // void Awake()
+    // {
+        // playerRigidbody = GetComponent<Rigidbody2D>();
+    // }
 	
 	void Start()
 	{
-		mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();;
+		mainCamera = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
 	}
 	
 	void Update()
