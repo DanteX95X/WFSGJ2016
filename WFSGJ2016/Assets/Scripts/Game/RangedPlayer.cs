@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 using System;
@@ -63,7 +63,7 @@ public class RangedPlayer : MonoBehaviour, IMortal
 		}
 	
         //if (Input.GetKeyUp(KeyCode.Space))
-        if (Input.GetButtonDown("Player2Attack"))
+        if (Input.GetButtonDown("Player2Attack") && GetComponent<SpriteRenderer>().enabled)
         //if (Input.GetButton("Fire1"))
         {
             if (ammunitionRounds > 0)

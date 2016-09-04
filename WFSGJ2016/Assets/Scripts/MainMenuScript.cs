@@ -8,7 +8,7 @@ public class MainMenuScript : MonoBehaviour {
     AudioSource clickAudio;
 	void Start () {
         clickAudio = GetComponent<AudioSource>();
-        DontDestroyOnLoad(transform.gameObject);
+
 	
 	}
 	
@@ -37,5 +37,29 @@ public class MainMenuScript : MonoBehaviour {
             clickAudio.Play();
         yield return new WaitForSeconds(0.5f);
         Application.Quit();
+    }
+
+    public void Credits()
+    {
+        StartCoroutine("CCredits");
+    }
+    IEnumerator CCredits()
+    {
+        if (clickAudio != null)
+            clickAudio.Play();
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadScene("Credits");
+    }
+
+    public void MainMenu()
+    {
+        StartCoroutine("CMainMenu");
+    }
+    IEnumerator CMainMenu()
+    {
+        if (clickAudio != null)
+            clickAudio.Play();
+        yield return new WaitForSeconds(0.5f);
+        SceneManager.LoadScene("MainMenu");
     }
 }
