@@ -14,6 +14,7 @@ public class EnemyController : MonoBehaviour {
     float time = 0f;
 
     public GameObject[] houses = null;
+    GameObject[] enemySpawnPoints = null;
 
     public GameObject enemy;	//prefab
 	
@@ -25,6 +26,7 @@ public class EnemyController : MonoBehaviour {
         Debug.Log("Enemy controller started!");
 
         houses = GameObject.FindGameObjectsWithTag("House");
+        enemySpawnPoints = GameObject.FindGameObjectsWithTag("EnemySpawnPoint");
 
         SetSpawnTime();
         time = minTime;
@@ -65,25 +67,7 @@ public class EnemyController : MonoBehaviour {
 
     Vector3 RandomPosition()
     {
-        float randResult = Random.value;
-
-        if (randResult > 0.75f)
-        {
-            return new Vector3(6, 8 * (Random.value - 0.5f), 0);
-        }
-        else if (randResult > 0.5f)
-        {
-            return new Vector3(-6, 8 * (Random.value - 0.5f), 0);
-        }
-        else if (randResult > 0.25f)
-        {
-            return new Vector3(12 * (Random.value - 0.5f), 4, 0);
-        }
-        else
-        {
-            return new Vector3(12 * (Random.value - 0.5f), -4, 0);
-        }
-
+        return enemySpawnPoints[Random.Range(0, enemySpawnPoints.Length - 1)].transform.position;
     }
 
     Vector3 RandomDestination()

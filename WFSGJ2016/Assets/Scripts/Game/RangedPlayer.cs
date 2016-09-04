@@ -22,7 +22,8 @@ public class RangedPlayer : MonoBehaviour, IMortal
 
     bool hasHealingShot = false;
 
-    int ammunitionRounds = 20;
+    //int ammunitionRounds = 20;
+    public int ammunitionRounds = 20;
 
     Rigidbody2D rb;
     public Text ammoCounter;
@@ -40,8 +41,9 @@ public class RangedPlayer : MonoBehaviour, IMortal
 
     void Update ()
     {
-        // if (Input.GetKeyUp(KeyCode.Space))
-        if (Input.GetButton("Fire1"))
+        //if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetButtonUp("Player2Attack") && GetComponent<MeshRenderer>().enabled)
+        //if (Input.GetButton("Fire1"))
         {
             if (ammunitionRounds > 0)
             {
@@ -98,6 +100,7 @@ public class RangedPlayer : MonoBehaviour, IMortal
         {
             moveValue = -movementSpeed;
         }
+
 		
 		return moveValue;
 	}
