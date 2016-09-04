@@ -12,4 +12,4 @@ Development Team:
 	Piotr Gryko
 	Jacek "Asterix" Kozieja
 	Mikołaj Ciesielski
-	Daniel "Dante" Lewiñski
+	Daniel "Dante" Lewiński
