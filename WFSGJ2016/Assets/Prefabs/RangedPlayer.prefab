@@ -26,6 +26,8 @@ GameObject:
   - 114: {fileID: 114000010754073566}
   - 82: {fileID: 82000011946086638}
   - 58: {fileID: 58000011968478714}
+  - 114: {fileID: 114000014272747310}
+  - 114: {fileID: 114000010009775716}
   m_Layer: 0
   m_Name: RangedPlayer
   m_TagString: Player
@@ -252,7 +254,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 1000000
   m_GravityScale: 0
   m_IsKinematic: 0
   m_Interpolate: 0
@@ -281,7 +283,7 @@ BoxCollider:
   m_GameObject: {fileID: 1000010424507506}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
@@ -359,6 +361,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &114000010009775716
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010266860450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abf705670cdf19e40978b5fa6b771052, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 6
 --- !u!114 &114000010754073566
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -392,6 +406,17 @@ MonoBehaviour:
   healingBullet: {fileID: 1000010561610676, guid: b9e835af397a37d49b98c14105b20639,
     type: 2}
   ammoCounter: {fileID: 0}
+--- !u!114 &114000014272747310
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010266860450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15a8c1372651a97428316acac3b78a24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!120 &120000011209875636
 LineRenderer:
   m_ObjectHideFlags: 1

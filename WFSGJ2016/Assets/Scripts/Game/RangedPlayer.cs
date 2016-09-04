@@ -17,8 +17,6 @@ public class RangedPlayer : MonoBehaviour, IMortal
     [SerializeField]
     GameObject healingBullet = null;
 	
-    // public GameObject muzzleFlash;
-    // public GameObject muzzle;
     private Transform muzzle;
 	private ParticleSystem muzzleFlash;
 
@@ -42,7 +40,8 @@ public class RangedPlayer : MonoBehaviour, IMortal
 
     void Update ()
     {
-        if (Input.GetKeyUp(KeyCode.Space))
+        // if (Input.GetKeyUp(KeyCode.Space))
+        if (Input.GetButton("Fire1"))
         {
             if (ammunitionRounds > 0)
             {
@@ -64,8 +63,20 @@ public class RangedPlayer : MonoBehaviour, IMortal
                 asource.PlayOneShot(asource.clip);
             }
         }
-        float moveValue = 0.0f;
+		
+    }
+	
+	/*
+	private void FixedUpdate()
+	{
+		// Rotate();
+		// float moveValue = Move();
 
+        // rb.velocity = transform.up * moveValue * Time.deltaTime;
+	}
+	
+	private void Rotate()
+	{
 	    if(Input.GetKey(KeyCode.LeftArrow))
         {
             transform.Rotate(0, 0, rotationSpeed * Time.deltaTime);
@@ -74,7 +85,12 @@ public class RangedPlayer : MonoBehaviour, IMortal
         {
             transform.Rotate(0, 0, -rotationSpeed * Time.deltaTime);
         }
-        if(Input.GetKey(KeyCode.UpArrow))
+	}
+	private float Move()
+	{
+        float moveValue = 0.0f;
+		
+		if(Input.GetKey(KeyCode.UpArrow))
         {
             moveValue = movementSpeed;
         }
@@ -82,8 +98,10 @@ public class RangedPlayer : MonoBehaviour, IMortal
         {
             moveValue = -movementSpeed;
         }
-        rb.velocity = transform.up * moveValue * Time.deltaTime;
-    }
+		
+		return moveValue;
+	}
+	*/
 
     public void Die()
     {
