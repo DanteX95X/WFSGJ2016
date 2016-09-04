@@ -42,7 +42,7 @@ public class RangedPlayer : MonoBehaviour, IMortal
 
     void Update ()
     {
-        if (Input.GetButtonUp("Player2Attack"))
+        if (Input.GetButtonUp("Player2Attack") && GetComponent<MeshRenderer>().enabled)
         {
             if (ammunitionRounds > 0)
             {
