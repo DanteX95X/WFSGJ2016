@@ -110,6 +110,10 @@ namespace Assets.Scripts.Enemy
         {
             float step = speed * Time.deltaTime;
             transform.rotation = Quaternion.RotateTowards(transform.rotation, to , step);
+
+			foreach (Transform child in transform) {
+				child.transform.rotation = Quaternion.identity;
+			}
         }
 
         void SpawnBullet()
@@ -150,7 +154,7 @@ namespace Assets.Scripts.Enemy
                 if (collectibles.Length > 0)
                 {
                     int randomindex = Random.Range(0, collectibles.Length - 1);
-                    Instantiate(collectibles[randomindex], transform.position, transform.rotation);
+                    Instantiate(collectibles[randomindex], transform.position, Quaternion.identity);
                 }
             }
 
