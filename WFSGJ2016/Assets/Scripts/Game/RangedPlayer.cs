@@ -20,7 +20,7 @@ public class RangedPlayer : MonoBehaviour, IMortal
     // public GameObject muzzleFlash;
     // public GameObject muzzle;
     private Transform muzzle;
-	private ParticleSystem muzzleFlash;
+	public ParticleSystem muzzleFlash;
 
     bool hasHealingShot = false;
 
@@ -30,6 +30,8 @@ public class RangedPlayer : MonoBehaviour, IMortal
     public Text ammoCounter;
     AudioSource asource;
 
+    public GameObject gun;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -37,12 +39,11 @@ public class RangedPlayer : MonoBehaviour, IMortal
         asource = GetComponent<AudioSource>();
 		
 		muzzle = gameObject.transform.Find("GunMuzzle");
-		muzzleFlash = muzzle.GetComponent<ParticleSystem>();
     }
 
     void Update ()
     {
-        if (Input.GetButtonUp("Player2Attack") && GetComponent<MeshRenderer>().enabled)
+        if (Input.GetButtonUp("Player2Attack"))
         {
             if (ammunitionRounds > 0)
             {
@@ -53,7 +54,7 @@ public class RangedPlayer : MonoBehaviour, IMortal
                 }
                 else
 				{
-                    (Instantiate(bullet, transform.position, transform.rotation) as GameObject).GetComponent<Bullet>().ParentCharacter = gameObject;
+                    (Instantiate(bullet, gun.transform.position, Quaternion.Euler(0.0f, 0.0f, -90.0f + gun.transform.rotation.eulerAngles.z)) as GameObject).GetComponent<Bullet>().ParentCharacter = gameObject;
 					// muzzle flash
                     // Instantiate(muzzleFlash, muzzle.position, muzzle.rotation);
 					muzzleFlash.Play();
@@ -76,7 +77,28 @@ public class RangedPlayer : MonoBehaviour, IMortal
         }*/
         if(Input.GetButton("Player2Rotate"))
         {
-            transform.Rotate(0, 0, Input.GetAxis("Player2Rotate") * rotationSpeed * Time.deltaTime);
+            gun.transform.Rotate(0, 0, Input.GetAxis("Player2Rotate") * rotationSpeed * Time.deltaTime);
+            Debug.Log(gun.transform.rotation.eulerAngles);
+
+            Debug.Log(gun.transform.right);
+
+            if (!GetComponent<SpriteRenderer>().flipX)
+            {
+                if (gun.transform.right.x < 0.0f)
+                {
+                    GetComponent<SpriteRenderer>().flipX = true;
+                    gun.GetComponent<SpriteRenderer>().flipY = true;
+                }
+            }
+            else
+            {
+                if (gun.transform.right.x > 0.0f)
+                {
+                    GetComponent<SpriteRenderer>().flipX = false;
+                    gun.GetComponent<SpriteRenderer>().flipY = false;
+                }
+            }
+
         }
         if(Input.GetButton("Player2Move"))
         {
