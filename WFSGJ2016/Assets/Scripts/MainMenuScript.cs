@@ -8,7 +8,7 @@ public class MainMenuScript : MonoBehaviour {
     AudioSource clickAudio;
 	void Start () {
         clickAudio = GetComponent<AudioSource>();
-        DontDestroyOnLoad(transform.gameObject);
+
 	
 	}
 	
