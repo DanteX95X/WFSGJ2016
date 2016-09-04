@@ -12,10 +12,12 @@ public class RangedPlayerMovement : MonoBehaviour
     private Vector3 movement;                   // The vector to store the direction of the player's movement.
     private Rigidbody2D playerRigidbody;
 
+	Animator animator;
 
     void Awake ()
     {
         playerRigidbody = GetComponent<Rigidbody2D>();
+		animator = GetComponent<Animator>();
 
     }
 	
@@ -49,6 +51,15 @@ public class RangedPlayerMovement : MonoBehaviour
         //movement.Normalize();
         // Normalise the movement vector and make it proportional to the speed per second.
         movement = movement.normalized * speed * Time.deltaTime;
+		
+		if (movement != Vector3.zero)
+		{
+			animator.SetBool("isWalking", true);
+		}
+		else
+		{
+			animator.SetBool("isWalking", false);
+		}
 
         // Move the player to it's current position plus the movement.
         playerRigidbody.MovePosition(transform.position + movement);
