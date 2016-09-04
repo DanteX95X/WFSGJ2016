@@ -341,6 +341,22 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1000012800320212
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 4000012173594766}
+  - 212: {fileID: 212000010168266896}
+  m_Layer: 0
+  m_Name: house
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
 --- !u!1 &1000012847621200
 GameObject:
   m_ObjectHideFlags: 1
@@ -692,6 +708,7 @@ Transform:
   - {fileID: 4000013621995056}
   - {fileID: 4000013119440284}
   - {fileID: 4000010285554780}
+  - {fileID: 4000012173594766}
   m_Father: {fileID: 0}
   m_RootOrder: 0
 --- !u!4 &4000010454428556
@@ -898,6 +915,19 @@ Transform:
   - {fileID: 4000012263849950}
   m_Father: {fileID: 4000010302649354}
   m_RootOrder: 0
+--- !u!4 &4000012173594766
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012800320212}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.5353676, y: 0.61194354, z: -2.4617372}
+  m_LocalScale: {x: 1.087561, y: 0.9974122, z: 0.24617371}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 4000010302649354}
+  m_RootOrder: 10
 --- !u!4 &4000012263849950
 Transform:
   m_ObjectHideFlags: 1
@@ -2812,6 +2842,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ammoCounter: {fileID: 0}
+  ammoPickUp: {fileID: 158994, guid: 12b817dcfe3b441cdaec3a5cd59844ef, type: 2}
 --- !u!114 &114000011713537604
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2824,6 +2855,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ammoCounter: {fileID: 0}
+  ammoPickUp: {fileID: 158994, guid: 12b817dcfe3b441cdaec3a5cd59844ef, type: 2}
 --- !u!114 &114000011903768734
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2836,6 +2868,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ammoCounter: {fileID: 0}
+  ammoPickUp: {fileID: 158994, guid: 12b817dcfe3b441cdaec3a5cd59844ef, type: 2}
 --- !u!114 &114000013165542904
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2848,6 +2881,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ammoCounter: {fileID: 0}
+  ammoPickUp: {fileID: 158994, guid: 12b817dcfe3b441cdaec3a5cd59844ef, type: 2}
 --- !u!114 &114000013172780896
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2860,6 +2894,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ammoCounter: {fileID: 0}
+  ammoPickUp: {fileID: 158994, guid: 12b817dcfe3b441cdaec3a5cd59844ef, type: 2}
 --- !u!114 &114000013454778518
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2875,6 +2910,7 @@ MonoBehaviour:
   deathWhenNoHealth: 1
   healthBar: {fileID: 0}
   deathClip: {fileID: 0}
+  particle: {fileID: 0}
 --- !u!114 &114000013831448862
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2887,3 +2923,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ammoCounter: {fileID: 0}
+  ammoPickUp: {fileID: 158994, guid: 12b817dcfe3b441cdaec3a5cd59844ef, type: 2}
+--- !u!212 &212000010168266896
+SpriteRenderer:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000012800320212}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 0
+  m_ReflectionProbeUsage: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_SubsetIndices: 
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedWireframeHidden: 1
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: 4addcaf8e79787c4da8afb7f5ebe7c34, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
