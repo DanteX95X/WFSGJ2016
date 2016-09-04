@@ -25,6 +25,8 @@ GameObject:
   - 82: {fileID: 82000011946086638}
   - 58: {fileID: 58000011968478714}
   - 212: {fileID: 212000011420465918}
+  - 114: {fileID: 114000011238137680}
+  - 114: {fileID: 114000013370511354}
   m_Layer: 0
   m_Name: RangedPlayer
   m_TagString: Player
@@ -288,6 +290,17 @@ MonoBehaviour:
   healthBar: {fileID: 0}
   deathClip: {fileID: 0}
   particle: {fileID: 198000013294180084}
+--- !u!114 &114000011238137680
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010266860450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15a8c1372651a97428316acac3b78a24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114000013078696684
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -305,8 +318,21 @@ MonoBehaviour:
   healingBullet: {fileID: 1000010561610676, guid: b9e835af397a37d49b98c14105b20639,
     type: 2}
   muzzleFlash: {fileID: 198000010633220118}
+  ammunitionRounds: 20
   ammoCounter: {fileID: 0}
   gun: {fileID: 1000010354491866}
+--- !u!114 &114000013370511354
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000010266860450}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: abf705670cdf19e40978b5fa6b771052, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 6
 --- !u!120 &120000011209875636
 LineRenderer:
   m_ObjectHideFlags: 1
