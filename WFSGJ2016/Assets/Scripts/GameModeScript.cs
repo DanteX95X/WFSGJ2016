@@ -73,6 +73,7 @@ public class GameModeScript : MonoBehaviour {
             clickAudio.Play();
         yield return new WaitForSeconds(0.5f);
         SceneManager.LoadScene("Game");
+        Destroy(GameObject.Find("MusicSource"));
 
         switch(modeNum){
             case 0:
