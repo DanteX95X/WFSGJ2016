@@ -114,9 +114,9 @@ namespace Assets.Scripts.Enemy
 
         void SpawnBullet()
         {
-            Debug.Log("spawning bullet");
+//            Debug.Log("spawning bullet");
             time = minTime;
-            if (transform != null && meleePlayer != null && GetComponent<MeshRenderer>().enabled)
+            if (transform != null && meleePlayer != null && !dead)
             {
                 (Instantiate(bullet, transform.position, Quaternion.LookRotation(new Vector3(0, 0, 1), meleePlayer.transform.position - transform.position)) as GameObject).GetComponent<Bullet>().ParentCharacter = gameObject;
                 asource.PlayOneShot(asource.clip);

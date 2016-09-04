@@ -100,7 +100,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   Priority: 128
@@ -199,7 +199,7 @@ MonoBehaviour:
   minTime: 3
   maxTime: 9
   houses: []
-  enemy: {fileID: 191926, guid: 2d4369f3b95e9644d87fe9b070877c7e, type: 2}
+  enemy: {fileID: 1000013694447092, guid: f68d3e7d4e3064b4994db176cc5ed7bb, type: 2}
 --- !u!124 &124000010165706138
 Behaviour:
   m_ObjectHideFlags: 1

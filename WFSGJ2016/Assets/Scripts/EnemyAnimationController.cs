@@ -48,7 +48,5 @@ public class EnemyAnimationController : MonoBehaviour {
             animator.SetBool("walkDown", false);
             animator.SetBool("walkRight", false);
         }
-
-		Debug.Log(transform.rotation.eulerAngles);
 	}
 }
