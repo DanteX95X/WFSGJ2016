@@ -8,5 +8,5 @@ Development Team:
 	Melchior Moroz
 	Piotr Gryko
 	Jacek "Asterix" Kozieja
-	Miko≥aj Ciesielski
-	Daniel "Dante" LewiÒski
+	Miko≈Çaj Ciesielski
+	Daniel "Dante" Lewi√±ski
