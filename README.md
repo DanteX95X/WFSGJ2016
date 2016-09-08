@@ -13,3 +13,7 @@ Development Team:
 	Jacek "Asterix" Kozieja
 	Mikołaj Ciesielski
 	Daniel "Dante" Lewiński
+
+Link to build:
+
+	https://dantex.itch.io/dont-kill-this-love
